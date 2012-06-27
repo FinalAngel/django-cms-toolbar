@@ -1,0 +1,29 @@
+//##################################################
+// #PROJECT/_settings.scss#
+
+// importing normalize reset mixins
+@import "libs/normalize";
+// importing 960 grid mixins
+@import "libs/960gs";
+// importing boilerplate
+@import "libs/html5-boilerplate";
+// importing boilerplate
+@import "libs/pie";
+// importing compass mixins
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/typography/text/ellipsis";
+// importing project partials
+@import "partials/content";
+
+//##################################################
+// #GLOBAL VARIABLES#
+
+// #GLOBAL VARIABLES/960ga#
+$ninesixty-gutter-width:		20px;
+$ninesixty-grid-width:			960px;
+$ninesixty-columns:				12;
+$ninesixty-class-separator: 	"_";
+
+// #GLOBAL VARIABLES/css3#
+$use-mozilla-ellipsis-binding:  true;

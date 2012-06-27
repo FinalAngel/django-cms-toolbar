@@ -1,0 +1,17 @@
+@charset "utf-8";
+/*!
+ * @author:		Angelo Dini
+ * @copyright:	http://www.divio.ch under the BSD Licence
+ */
+
+//##################################################
+// #IMPORT PROJECT SETTINGS#
+@import "partials/settings";
+
+//##################################################
+// #BASE#
+@include normalize(); // loaded from libs/_normalize.scss
+@include grid-system-complete($ninesixty-columns); // loaded from libs/_960gs.scss
+
+// #BASE/vertical-rythm#
+ul, ol, p, blockquote, dd, pre, table, hr, dl { margin:10px 0; }
