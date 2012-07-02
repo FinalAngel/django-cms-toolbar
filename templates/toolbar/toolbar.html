@@ -1,21 +1,21 @@
-{% load i18n adminmedia sekizai_tags cms_js_tags cms_admin %}
-{% addtoblock "js" %}
 <script type="text/javascript">
 	var _jQuery = window.jQuery || null;
 	var _$ = window.$;
 </script>
-{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{% admin_static_url %}js/jquery.min.js"></script>{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/jquery.cookie.js"></script>{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/classy.min.js"></script>{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.setup.js"></script>{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.base.js"></script>{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.toolbar.js"></script>{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.placeholders.js"></script>{% endaddtoblock %}
-{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cms/css/plugins/cms.toolbar.css?v1" media="all" />{% endaddtoblock %}
-{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cms/css/plugins/cms.placeholders.css?v1" media="all" />{% endaddtoblock %}
-{% addtoblock "js" %}
+<script type="text/javascript" src="/static/js/libs/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/libs/class.min.js"></script>
+<script type="text/javascript" src="/static/js/plugins/cms.base.js"></script>
+<script type="text/javascript" src="/static/js/plugins/cms.toolbar.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/css/plugins/cms.toolbar.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/plugins/cms.placeholders.css" />
 <script type="text/javascript">
+CMS.$(document).ready(function () {
+	CMS.API.Toolbar = new CMS.Toolbar('#cms_toolbar', {
+
+	});
+});
+/*
 CMS.$(document).ready(function () {
 	// initialize toolbar, pass options, items and allow public access
 	CMS.API.Toolbar = new CMS.Toolbar('#cms_toolbar', {{ CMS_TOOLBAR_CONFIG|safe }});
@@ -30,66 +30,69 @@ CMS.$(document).ready(function () {
 		}
 	});
 });
+*/
 </script>
-{% endaddtoblock %}
-{% addtoblock "js" %}
 <script type="text/javascript">
 	window.jQuery = _jQuery || jQuery;
 	window.$ = _$ || jQuery;
 </script>
-{% endaddtoblock %}
-<div id="cms_toolbar" class="cms_reset" style="display:none;">
+
+<div id="cms_toolbar" class="cms_reset">
 	<!-- start: toolbar -->
 	<div class="cms_toolbar">
-		<div id="cms_toolbar-toggle">
-			<a href="#" class="cms_toolbar-btn cms_toolbar-btn_left">
-				<span class="cms_toolbar-btn_right cms_toolbar_icon-toggle">
-					<span class="cms_toolbar_icon">&nbsp;</span>
-				</span>
-			</a>
+		<div class="cms_toolbar-left">
+			<div class="cms_toolbar-item cms_toolbar-item_logo"><a href="/"><span>django CMS</span></a></div>
+			<ul class="cms_toolbar-item cms_toolbar-item_navigation">
+				<li>
+					<a href="/admin/"><span>Admin</span></a>
+					<ul>
+						<li><a href="/admin/"><span>Administration</span></a></li>
+						<li><a href="/admin/cms/page/"><span>Pages</span></a></li>
+						<li><a href="/admin/auth/user/"><span>Users</span></a></li>
+						<li><a href="/admin/logout/"><span><strong>Logout</strong></span></a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="/admin/cms/page/1/"><span>Page</span></a>
+					<ul>
+						<li><a href="/admin/cms/page/1/"><span>Edit settings</span></a></li>
+						<li><a href="/admin/cms/page/1/delete/"><span>Delete page</span></a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="/admin/cms/page/1/"><span>Template</span></a>
+					<ul>
+						<li><a href="/admin/cms/page/1/change_template/?template=tpl_master.html"><span>Master template</span></a></li>
+						<li class="active"><a href="/admin/cms/page/1/change_template/?template=tpl_two-column.html"><span>Two column template</span></a></li>
+						<li><a href="/admin/cms/page/1/change_template/?template=tpl_three-column.html"><span>Three column template</span></a></li>
+					</ul>
+				</li>
+				<li<? if(!isset($_GET["draft"]) && !isset($_GET["edit"]) && !isset($_GET["drag"])): ?> class="cms_toolbar-item_navigation-disabled"<? endif ?>>
+					<a href="/admin/"><span>Publish</span></a>
+					<ul>
+						<li><a href="#"><span>Publish now</span></a></li>
+					</ul>
+				</li>
+			</ul>
 		</div>
-		<div id="cms_toolbar-toolbar">
-			<div class="cms_toolbar-left"></div>
-			<div class="cms_toolbar-right"></div>
+		<div class="cms_toolbar-right">
+			<ul class="cms_toolbar-item cms_toolbar-item_buttons">
+				<li<? if(!isset($_GET["draft"]) && !isset($_GET["edit"]) && !isset($_GET["drag"])): ?> class="active"<? endif ?>><a href="/"><span>Live</span></a></li>
+				<li<? if(isset($_GET["draft"]) || isset($_GET["edit"]) || isset($_GET["drag"])): ?> class="active"<? endif ?>><a href="?draft=true"><span>Draft</span></a></li>
+			</ul>
+			<ul class="cms_toolbar-item cms_toolbar-item_buttons">
+				<li<? if(isset($_GET["view"]) || isset($_GET["draft"])  || count($_GET) == 0): ?> class="active"<? endif ?>><a href="?view=true"><span>View</span></a></li>
+				<li<? if(isset($_GET["edit"])): ?> class="active"<? endif ?>><a href="?edit=true"><span>Edit</span></a></li>
+				<li<? if(isset($_GET["drag"])): ?> class="active"<? endif ?>><a href="?drag=true"><span class="cms_toolbar-icon_drag">Drag</span></a></li>
+			</ul>
 		</div>
+
+		<div class="cms_sideframe"></div>
+	</div>
+	<div class="cms_toolbar-trigger">
+		<ul class="cms_toolbar-item cms_toolbar-item_buttons">
+			<li><a href="#"><span>X</span></a></li>
+		</ul>
 	</div>
 	<!-- end: toolbar -->
-
-	<!-- start: placeholders -->
-	<div id="cms_placeholder-dim"></div>
-	<div id="cms_placeholder-content"><div class="cms_placeholder-content_zone"></div><div class="cms_placeholder-content_inner cms_placeholder-content_loader"></div></div>
-	<div id="cms_placeholder-overlay">
-		<ul class="cms_placeholder-options">
-			<li class="first"><a href="#" class="cms_placeholder-icon cms_placeholder-icon_edit" rel="edit">{% trans "edit" %}</a></li>
-			<li><a href="#" class="cms_placeholder-icon cms_placeholder-icon_up" rel="moveup">{% trans "up" %}</a></li>
-			<li><a href="#" class="cms_placeholder-icon cms_placeholder-icon_down" rel="movedown">{% trans "down" %}</a></li>
-			<li><a href="#" class="cms_placeholder-icon cms_placeholder-icon_delete" rel="delete">{% trans "delete" %}</a></li>
-			<li>
-				<a href="#" class="cms_placeholder-icon cms_placeholder-icon_more" rel="more">{% trans "more" %}</a>
-				<ul class="cms_placeholder-options_more cms_placeholder-subnav">
-					<li class="cms_placeholder-subnav-title"><span>{% trans "Move to placeholder" %}</span>
-						<ul><li><span>&nbsp;</span></li></ul>
-					</li>
-				</ul>
-			</li>
-		</ul>
-		<div class="cms_placeholder-overlay_bg"></div>
-	</div>
-	<div id="cms_placeholder-success"><div class="cms_placeholder-success_inner"></div></div>
-	<!-- end: placeholders -->
-
-	<!-- template: anchor -->
-	{% include "cms/toolbar/items/anchor.html" %}
-
-	<!-- template: switcher -->
-	{% include "cms/toolbar/items/switcher.html" %}
-
-	<!-- template: button -->
-	{% include "cms/toolbar/items/button.html" %}
-
-	<!-- template: list -->
-	{% include "cms/toolbar/items/list.html" %}
-
-	<!-- item: html - login -->
-	{% include "cms/toolbar/items/login.html" %}
 </div>

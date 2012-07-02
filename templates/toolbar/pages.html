@@ -9,20 +9,20 @@
 	<meta name="keywords" content="" />
 	<!-- stylesheets -->
 	<link rel="stylesheet" href="/static/css/base.css?v=1" />
-</head>
+
+<style>
+
+body { background:#fff; padding:10px; }
+h1 { font-size:11px; color:#666; text-transform:uppercase; padding:0 10px; }
+p { padding:0 10px; }
+
+</style>
+
 <body class="no-js tpl_master en anonymus">
 
-<?
-	$DRAFT = isset($_GET["draft"]) ? true : false;
-	$VIEW = isset($_GET["view"]) ? true : false;
-	$EDIT = isset($_GET["edit"]) ? true : false;
-	$DRAG = isset($_GET["drag"]) ? true : false;
-?>
+<h1>Pages</h1>
 
-<? include('templates/toolbar/toolbar.html'); ?>
-
-<!-- load content -->
-<div><? include('templates/content.html'); ?></div>
+<p>page tree wehee</p>
 
 <!-- include javascript -->
 <script src="/static/js/libs/jquery.min.js"></script>

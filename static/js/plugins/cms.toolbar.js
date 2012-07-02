@@ -17,7 +17,7 @@ CMS.$(document).ready(function ($) {
 	 * TODO: login needs special treatment (errors, login on enter)
 	 * TODO: styling of the collapser button needs to be somehow transparent
 	 */
-	CMS.Toolbar = CMS.Class.$extend({
+	CMS.Toolbar = new CMS.Class({
 
 		implement: [CMS.API.Helpers, CMS.API.Security],
 
@@ -29,19 +29,15 @@ CMS.$(document).ready(function ($) {
 		initialize: function (container, options) {
 			// save reference to this class
 			var that = this;
-			// check if only one element is given
-			if($(container).length > 2) { throw new Error('Toolbar Error: one element expected, multiple elements given.'); }
 			// merge passed argument options with internal options
-			this.options = $.extend(this.options, options);
+			this.options = $.extend(true, {}, this.options, options);
 
 			// set initial variables
-			this.wrapper = $(container);
-			this.toolbar = this.wrapper.find('#cms_toolbar-toolbar');
-			this.toolbar.left = this.toolbar.find('.cms_toolbar-left');
-			this.toolbar.right = this.toolbar.find('.cms_toolbar-right');
+			this.container = $(container);
+			this.toolbar = this.container.find('.cms_toolbar');
 
 			// bind event to toggle button so toolbar can be shown/hidden
-			this.toggle = this.wrapper.find('#cms_toolbar-toggle');
+			this.toggle = this.container.find('.cms_toolbar-trigger');
 			this.toggle.bind('click', function (e) {
 				e.preventDefault();
 				that.toggleToolbar();
@@ -58,29 +54,9 @@ CMS.$(document).ready(function ($) {
 			// save reference to this class
 			var that = this;
 
-			// scheck if toolbar should be shown or hidden
-			($.cookie('CMS_toolbar-collapsed') == 'false') ? this.toolbar.data('collapsed', true) : this.toolbar.data('collapsed', false);
-			// follow up script to set the current state
-			this.toggleToolbar();
 
-			// set toolbar to visible
-			this.wrapper.show();
-			// some browsers have problem showing it directly (loading css...)
-			setTimeout(function () { that.wrapper.show(); }, 50);
-
-			// start register items if any given
-			if(this.options.items.length) this.registerItems(this.options.items);
-
-			// apply csrf patch to toolbar from cms.base.js
-			this.csrf();
-
-			// the toolbar needs to resize depending on the window size on ie6
-			if($.browser.msie && $.browser.version <= '6.0') {
-				$(window).bind('resize', function () { that.wrapper.css('width', $(window).width()); });
-				$(window).trigger('resize');
-			}
 		},
-		
+
 		// Checks whether the toolbar is hidden right now
 		isToolbarHidden: function(){
 			return this.toolbar.data('collapsed');
@@ -92,6 +68,7 @@ CMS.$(document).ready(function ($) {
 		 * Saves current state in a cookie
 		 */
 		toggleToolbar: function () {
+			console.log(this.toolbar.data('collapsed'));
 			(this.toolbar.data('collapsed')) ? this._showToolbar() : this._hideToolbar();
 
 			return this.toolbar.data('collapsed');
@@ -99,34 +76,24 @@ CMS.$(document).ready(function ($) {
 
 		// sets collapsed data to false
 		_showToolbar: function () {
-			// add toolbar padding
-			var padding = parseInt($(document.body).css('margin-top'));
-				$(document.body).css('margin-top', (padding+43)); // 43 = height of toolbar
 			// show toolbar
-			this.toolbar.show();
+			this.toolbar.slideDown(200);
 			// change data information
 			this.toolbar.data('collapsed', false);
-			// add class to trigger
-			this.toggle.addClass('cms_toolbar-collapsed');
-			// save as cookie
-			$.cookie('CMS_toolbar-collapsed', false, { path:'/', expires:7 });
+			// remove class from trigger
+			this.toggle.removeClass('cms_toolbar-collapsed');
 			// add show event to toolbar
 			this.toolbar.trigger('cms.toolbar.show');
 		},
 
 		// sets collapsed data to true
 		_hideToolbar: function () {
-			// remove toolbar padding
-			var padding = parseInt($(document.body).css('margin-top'));
-				$(document.body).css('margin-top', (padding-this.toolbar.height()-1)); // substract 1 cause of the border
 			// hide toolbar
-			this.toolbar.hide();
+			this.toolbar.slideUp(200);
 			// change data information
 			this.toolbar.data('collapsed', true);
-			// remove class from trigger
-			this.toggle.removeClass('cms_toolbar-collapsed');
-			// save as cookie
-			$.cookie('CMS_toolbar-collapsed', true, { path:'/', expires:7 });
+			// add class to trigger
+			this.toggle.addClass('cms_toolbar-collapsed');
 			// add hide event to toolbar
 			this.toolbar.trigger('cms.toolbar.hide');
 		},
@@ -222,7 +189,7 @@ CMS.$(document).ready(function ($) {
 				e.preventDefault();
 				(obj.redirect) ? document.location = obj.redirect : $(this).parentsUntil('form').parent().submit();
 			});
-			
+
 			// append item
 			this._injectItem(template, obj.dir, obj.order);
 		},

@@ -33,22 +33,34 @@
 
 <!-- content -->
 <div class="container_12">
+	<? $id = '38'; $title = 'Feature'; include('templates/toolbar/prototype/placeholder-bar.html'); ?>
+
+	<? if($EDIT) $id = 100; include('templates/toolbar/prototype/placeholder-start.html') ?>
 	<div class="grid_5">
-		<p><img src="https://djeese.com/media/tmp/filer_private/2011/12/05/say_djeese.png.310x69_q95.png" alt="" /></p>
-		<h3>The easiest way to build &nbsp;<br>websites with django CMS.</h3>
-		<h4>And here's how it works…</h4>
-		<p>&nbsp;</p>
+		<? if($EDIT) $id = 101; include('templates/toolbar/prototype/placeholder-start.html') ?>
+			<p><img src="https://djeese.com/media/tmp/filer_private/2011/12/05/say_djeese.png.310x69_q95.png" alt="" /></p>
+		<? if($EDIT) include('templates/toolbar/prototype/placeholder-end.html') ?>
+		<? if($EDIT) $id = 102; include('templates/toolbar/prototype/placeholder-start.html') ?>
+			<h3>The easiest way to build &nbsp;<br>websites with django CMS.</h3>
+		<? if($EDIT) include('templates/toolbar/prototype/placeholder-end.html') ?>
+		<? if($EDIT) $id = 103; include('templates/toolbar/prototype/placeholder-start.html') ?>
+			<h4>And here's how it works…</h4>
+			<p>&nbsp;</p>
+		<? if($EDIT) include('templates/toolbar/prototype/placeholder-end.html') ?>
 	</div>
 	<div class="grid_7">
-		<p style="float:right;"><img src="https://djeese.com/media/tmp/filer_private/2012/02/11/screenshot_3.png.550x300_q95.png" alt="" style="max-width:100%;" /></p>
+		<? if($EDIT) $id = 104; include('templates/toolbar/prototype/placeholder-start.html') ?>
+			<p style="float:right;"><img src="https://djeese.com/media/tmp/filer_private/2012/02/11/screenshot_3.png.550x300_q95.png" alt="" style="max-width:100%;" /></p>
+		<? if($EDIT) include('templates/toolbar/prototype/placeholder-end.html') ?>
 	</div>
+	<? if($EDIT) include('templates/toolbar/prototype/placeholder-end.html') ?>
 </div>
 <div class="clearfix"></div>
 
-
-
 <section class="container_12">
 	<div class="content">
+		<? $id = '2'; $title = 'Content'; include('templates/toolbar/prototype/placeholder-bar.html'); ?>
+
 		<div class="left" style="float:left; width:50%;">
 			<h3>Let's say you have a nice web design</h3>
 
@@ -129,6 +141,8 @@
 
 <div class="container_12">
 	<div class="grid_4">
+		<? $id = '5'; $title = 'Left column'; include('templates/toolbar/prototype/placeholder-bar.html'); ?>
+
 		<div class="plugin_twitter">
 			<h5>Some tweets about djeese</h5>
 			<div id="twitter-container-146"></div>
@@ -136,6 +150,8 @@
 		</div>
 	</div>
 	<div class="grid_4">
+		<? $id = '15'; $title = 'Middle column'; include('templates/toolbar/prototype/placeholder-bar.html'); ?>
+
 		<div class="plugin_latest_entries">
 			<h5>News from our blog</h5>
 			<hr/>
@@ -147,6 +163,8 @@
 		</div>
 	</div>
 	<div class="grid_4">
+		<? $id = '300'; $title = 'Right column'; include('templates/toolbar/prototype/placeholder-bar.html'); ?>
+
 		<h5>Security &amp; Privacy</h5>
 		<hr/>
 		<p class="left"><small><span class="plugin_link"><a href="/en/features/security/">Security</a></span><br/></small><small><span class="plugin_link"><a href="/en/legal/privacy-policy/">Privacy Policy</a></span></small><br/> <small><span class="plugin_link"><a href="/en/legal/terms-service/">Terms of Service</a></span></small></p>
