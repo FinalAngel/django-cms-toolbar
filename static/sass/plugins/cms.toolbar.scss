@@ -50,8 +50,7 @@
 	.cms_toolbar-item_navigation {
 		li { float:left; position:relative; zoom:1; }
 		li a { float:left; padding:10px; zoom:1; }
-		li a:hover, li a:active,
-		li a:focus, .active > a { color:#6482b0; @include box-shadow(inset 0 0 10px #e1e1e1); }
+		li a:hover, .active > a { color:#6482b0; @include box-shadow(inset 0 0 10px #e1e1e1); }
 
 		li ul { display:none; }
 		li:hover {
@@ -68,7 +67,6 @@
 		.cms_toolbar-item_navigation-disabled a:hover { color:#efefef; @include box-shadow(none); }
 		.cms_toolbar-item_navigation-disabled ul { display:none !important; }
 	}
-
 
 	/* #TOOLBAR/items/buttons# */
 	.cms_toolbar-item_buttons { margin:6px; border:1px solid #ddd; @include border-radius(3px); }

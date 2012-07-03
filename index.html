@@ -1,3 +1,4 @@
+<? require_once('settings.php'); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,15 +10,9 @@
 	<meta name="keywords" content="" />
 	<!-- stylesheets -->
 	<link rel="stylesheet" href="/static/css/base.css?v=1" />
+	<? if($LAYOUT): ?><style>.cms_placeholder * { display:none; }</style><? endif; ?>
 </head>
 <body class="no-js tpl_master en anonymus">
-
-<?
-	$DRAFT = isset($_GET["draft"]) ? true : false;
-	$VIEW = isset($_GET["view"]) ? true : false;
-	$EDIT = isset($_GET["edit"]) ? true : false;
-	$DRAG = isset($_GET["drag"]) ? true : false;
-?>
 
 <? include('templates/toolbar/toolbar.html'); ?>
 

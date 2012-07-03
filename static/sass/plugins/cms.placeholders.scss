@@ -47,12 +47,13 @@
 
 /* ddd */
 
-.cms_placeholder:hover { @include box-shadow(inset 0 0 5px #ccc); background:rgba(225,225,225,0.2); }
-
-
+.cms_placeholder:hover { outline:1px dashed #6482b0; }
+/*.cms_placeholder:hover { border:1px dashed #6482b0; }*/
+/*
 .cms_placeholder { display:-moz-inline-box; -moz-box-orient:vertical; display:inline-block; float:left;
-	vertical-align:middle; *vertical-align:auto; width:100%;
-	clear:both; overflow:hidden; }
+	vertical-align:middle; *vertical-align:auto; cursor:pointer; cursor:hand; }
+*/
+.cms_placeholder { display:inline; cursor:pointer; cursor:hand; }
 
 
 
