@@ -53,8 +53,9 @@ def before_request():
     g.view = request.args.get('view', False)
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+@app.route('/render/<path:path>')
+def index(path='index.html'):
+    return render_template(path)
 
 if __name__ == '__main__':
     app.run(debug=True)
