@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bac1630-b649-4f8f-a46c-cde23fd3963e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/toolbar/prototype/placeholder-bar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/toolbar/prototype/placeholder-end.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/toolbar/prototype/placeholder-start.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/.sass-cache/0262d1548e36011fbbf2145f068eb0853faf9cc8/_content.scssc" afterPath="$PROJECT_DIR$/static/.sass-cache/0262d1548e36011fbbf2145f068eb0853faf9cc8/_content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/.sass-cache/b0be1f540500aacce75d8b0524afe97edaea1e44/cms.placeholders.scssc" afterPath="$PROJECT_DIR$/static/.sass-cache/b0be1f540500aacce75d8b0524afe97edaea1e44/cms.placeholders.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/.sass-cache/b0be1f540500aacce75d8b0524afe97edaea1e44/cms.toolbar.scssc" afterPath="$PROJECT_DIR$/static/.sass-cache/b0be1f540500aacce75d8b0524afe97edaea1e44/cms.toolbar.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/base.css" afterPath="$PROJECT_DIR$/static/css/base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/plugins/cms.placeholders.css" afterPath="$PROJECT_DIR$/static/css/plugins/cms.placeholders.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/plugins/cms.toolbar.css" afterPath="$PROJECT_DIR$/static/css/plugins/cms.toolbar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/plugins/cms.base.js" afterPath="$PROJECT_DIR$/static/js/plugins/cms.base.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/plugins/cms.toolbar.js" afterPath="$PROJECT_DIR$/static/js/plugins/cms.toolbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/sass/partials/_content.scss" afterPath="$PROJECT_DIR$/static/sass/partials/_content.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/sass/plugins/cms.placeholders.scss" afterPath="$PROJECT_DIR$/static/sass/plugins/cms.placeholders.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/sass/plugins/cms.toolbar.scss" afterPath="$PROJECT_DIR$/static/sass/plugins/cms.toolbar.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/content.html" afterPath="$PROJECT_DIR$/templates/content.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/toolbar/toolbar.html" afterPath="$PROJECT_DIR$/templates/toolbar/toolbar.html" />
     </list>
     <ignored path="django-cms-toolbar.iws" />
@@ -41,35 +28,7 @@
     <favorites_list name="django-cms-toolbar" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="cms.placeholders.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/sass/plugins/cms.placeholders.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="40" selection-start="2283" selection-end="2283" vertical-scroll-proportion="-22.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/content.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="0" selection-start="2908" selection-end="2908" vertical-scroll-proportion="-1.6455696">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_content.scss" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/sass/partials/_content.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="634" column="22" selection-start="22171" selection-end="22171" vertical-scroll-proportion="0.4439528">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -93,18 +52,18 @@
         <option value="$PROJECT_DIR$/static/sass/plugins/cms.placeholders.scss" />
         <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/static/sass/plugins/cms.toolbar.scss" />
-        <option value="$PROJECT_DIR$/static/js/plugins/cms.toolbar.js" />
-        <option value="$PROJECT_DIR$/templates/toolbar/toolbar.html" />
         <option value="$PROJECT_DIR$/templates/content.html" />
         <option value="$PROJECT_DIR$/static/sass/partials/_content.scss" />
+        <option value="$PROJECT_DIR$/templates/toolbar/toolbar.html" />
+        <option value="$PROJECT_DIR$/static/js/plugins/cms.toolbar.js" />
+        <option value="$PROJECT_DIR$/static/sass/plugins/cms.toolbar.scss" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="838" />
+    <option name="x" value="1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -320,112 +279,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django-cms-toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django-cms-toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django-cms-toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django-cms-toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django-cms-toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django-cms-toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dummy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django-cms-toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django-cms-toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django-cms-toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django-cms-toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -542,15 +395,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="1920" y="0" width="1920" height="1200" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17606747" sideWeight="0.40415913" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19081779" sideWeight="0.58951175" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14887941" sideWeight="0.9859155" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -621,11 +474,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/toolbar/pages.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="20" selection-start="521" selection-end="521" vertical-scroll-proportion="0.2843602" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/plugins/cms.placeholders.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="5097" selection-end="5097" vertical-scroll-proportion="0.014071294" />
@@ -643,84 +491,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="204" selection-end="204" vertical-scroll-proportion="0.13901761">
-          <folding />
-        </state>
+        <state line="10" column="11" selection-start="204" selection-end="204" vertical-scroll-proportion="0.13901761" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/libs/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="39" selection-start="65274" selection-end="65274" vertical-scroll-proportion="0.042213883">
-          <folding />
-        </state>
+        <state line="3" column="39" selection-start="65274" selection-end="65274" vertical-scroll-proportion="0.042213883" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/libs/class.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="61" selection-start="173" selection-end="173" vertical-scroll-proportion="0.07035647">
-          <folding />
-        </state>
+        <state line="5" column="61" selection-start="173" selection-end="173" vertical-scroll-proportion="0.07035647" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/plugins/cms.base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="170" selection-end="170" vertical-scroll-proportion="0.055607043">
-          <folding />
-        </state>
+        <state line="4" column="33" selection-start="170" selection-end="170" vertical-scroll-proportion="0.055607043" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="12" selection-start="471" selection-end="471" vertical-scroll-proportion="0.22594142">
-          <folding />
-        </state>
+        <state line="15" column="12" selection-start="471" selection-end="471" vertical-scroll-proportion="0.22594142" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="48" selection-start="561" selection-end="561" vertical-scroll-proportion="0.34632036">
+        <state line="16" column="48" selection-start="561" selection-end="561" vertical-scroll-proportion="0.34632036" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/sass/partials/_content.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="18" selection-start="296" selection-end="296" vertical-scroll-proportion="0.17045455" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/toolbar/tolbar_old.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="36" selection-start="415" selection-end="415" vertical-scroll-proportion="0.30882353" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/sass/plugins/cms.placeholders.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="20" selection-start="334" selection-end="334" vertical-scroll-proportion="0.22713864" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="39" selection-start="2907" selection-end="2908" vertical-scroll-proportion="0.30882353" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/plugins/cms.toolbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="84" selection-start="3866" selection-end="3866" vertical-scroll-proportion="0.8331789">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/toolbar/toolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="38" selection-start="858" selection-end="858" vertical-scroll-proportion="0.184">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/plugins/cms.toolbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="0" selection-start="3397" selection-end="3397" vertical-scroll-proportion="0.47698745">
+        <state line="82" column="20" selection-start="3628" selection-end="3648" vertical-scroll-proportion="0.8720379">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/sass/plugins/cms.toolbar.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="30" selection-start="4016" selection-end="4016" vertical-scroll-proportion="0.3622159">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/sass/plugins/cms.placeholders.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="40" selection-start="2283" selection-end="2283" vertical-scroll-proportion="-22.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="0" selection-start="2908" selection-end="2908" vertical-scroll-proportion="-1.6455696">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/sass/partials/_content.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="634" column="22" selection-start="22171" selection-end="22171" vertical-scroll-proportion="0.4439528">
+        <state line="91" column="118" selection-start="4817" selection-end="4817" vertical-scroll-proportion="0.652456">
           <folding />
         </state>
       </provider>

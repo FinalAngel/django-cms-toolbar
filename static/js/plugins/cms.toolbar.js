@@ -42,8 +42,6 @@ jQuery(document).ready(function ($) {
 
 			// initial setups
 			this._setup();
-
-			this._experimental();
 		},
 
 		/**
@@ -53,18 +51,6 @@ jQuery(document).ready(function ($) {
 
 			// handle related menu functionality
 			this._menu();
-		},
-
-		_experimental: function () {
-			$('.cms_placeholder').bind('dblclick', function () {
-
-				$(this).css({
-					'background': '#f00;'
-				});
-
-				console.log('open', this);
-			});
-
 		},
 
 		// Checks whether the toolbar is hidden right now
@@ -134,12 +120,23 @@ jQuery(document).ready(function ($) {
 					case 'modal':
 						break;
 					case 'sideframe':
+						that.loadSideframe($(this).attr('href'));
 						break;
 					default:
 						window.location = $(this).attr('href');
 				}
 			});
 
+			// autoadd sideframe
+			this.loadSideframe('test/');
+
+		},
+
+		loadSideframe: function (href) {
+			var iframe = $('<iframe src="'+href+'" class="" frameborder="0" />');
+			var container = this.container.find('#cms_sideframe .cms_sideframe-frame');
+
+			container.html(iframe);
 		}
 
 	});
