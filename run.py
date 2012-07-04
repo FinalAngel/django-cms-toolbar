@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, g, request
 from jinja2 import Markup
+import os
 
 app = Flask(__name__)
 
@@ -53,8 +54,9 @@ def before_request():
     g.view = request.args.get('view', False)
 
 @app.route('/')
-@app.route('/render/<path:path>')
-def index(path='index.html'):
+@app.route('/render/<path:path>/')
+def index(path='index'):
+    path = '%s.html' % os.path.splitext(path)[0].rstrip('/')
     return render_template(path)
 
 if __name__ == '__main__':
