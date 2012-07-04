@@ -48,7 +48,7 @@ jQuery(document).ready(function ($) {
 						<li><a href="/admin/cms/page/1/change_template/?template=tpl_three-column.html" rel="ajax"><span>Three column template</span></a></li>
 					</ul>
 				</li>
-				<li<? if(count($_GET) == 0): ?> class="cms_toolbar-item_navigation-disabled"<? endif ?>>
+				<li{% if not request.args %} class="cms_toolbar-item_navigation-disabled"{% endif %}>
 					<a href="/admin/"><span>Publish</span></a>
 					<ul>
 						<li><a href="#" rel="ajax"><span>Publish now</span></a></li>
@@ -59,16 +59,16 @@ jQuery(document).ready(function ($) {
 		</div>
 		<div class="cms_toolbar-right">
 			<ul class="cms_toolbar-item cms_toolbar-item_buttons">
-				<li<? if(count($_GET) == 0): ?> class="active"<? endif ?>><a href="/"><span>Live</span></a></li>
-				<li<? if(count($_GET) != 0): ?> class="active"<? endif ?>><a href="?edit=true"><span>Draft</span></a></li>
+				<li{% if not request.args %} class="active"{% endif %}><a href="/"><span>Live</span></a></li>
+				<li{% if request.args %} class="active"{% endif %}><a href="?edit=true"><span>Draft</span></a></li>
 			</ul>
-			<? if(!isset($_GET["live"]) && count($_GET) != 0): ?>
+			{% if g.live and request.args %}
 			<ul class="cms_toolbar-item cms_toolbar-item_buttons">
-				<li<? if(isset($_GET["edit"])): ?> class="active"<? endif ?>><a href="?edit=true"><span>Edit</span></a></li>
-				<li<? if(isset($_GET["layout"])): ?> class="active"<? endif ?>><a href="?layout=true"><span>Layout</span></a></li>
-				<li<? if(isset($_GET["view"])): ?> class="active"<? endif ?>><a href="?view=true"><span>View</span></a></li>
+				<li{% if g.edit %} class="active"{% endif %}><a href="?edit=true"><span>Edit</span></a></li>
+				<li{% if g.layout %} class="active"{% endif %}><a href="?layout=true"><span>Layout</span></a></li>
+				<li{% if g.view %} class="active"{% endif %}><a href="?view=true"><span>View</span></a></li>
 			</ul>
-			<? endif; ?>
+			{% endif %}
 		</div>
 	</div>
 	<div class="cms_toolbar-trigger">
