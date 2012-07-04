@@ -1,4 +1,3 @@
-<? require_once('settings.php'); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,15 +8,16 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<!-- stylesheets -->
-	<link rel="stylesheet" href="/static/css/base.css?v=1" />
-	<? if($LAYOUT): ?><style>.cms_placeholder * { display:none; }</style><? endif; ?>
+	<link rel="stylesheet" href="/static/css/base.css" />
+	{% if not request.args.get('edit') %}<style>.cms_placeholder * { display:none; }</style>{% endif %}
 </head>
 <body class="no-js tpl_master en anonymus">
 
-<? include('templates/toolbar/toolbar.html'); ?>
+
+{% include 'toolbar/toolbar.html' %}
 
 <!-- load content -->
-<div><? include('templates/content.html'); ?></div>
+<div>{% include 'content.html' %}</div>
 
 <!-- include javascript -->
 <script src="/static/js/libs/jquery.min.js"></script>
