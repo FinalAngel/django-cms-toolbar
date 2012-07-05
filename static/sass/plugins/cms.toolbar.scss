@@ -102,11 +102,12 @@
 
 /* #TOOLBAR/sideframe# */
 #cms_toolbar {
-	#cms_sideframe { position:fixed; left:0; top:0; width:275px; height:100%; z-index:1; }
+	#cms_sideframe { display:none; position:fixed; left:0; top:0; height:100%; z-index:1; }
 	#cms_sideframe iframe { height:100%; width:100%;
 		border:none; background:#fff; overflow:hidden; }
 
-	.cms_sideframe-frame { width:100%; height:100%; background:#fff; }
-	.cms_sideframe-holder { position:absolute; right:0; top:0; width:2px; height:100%;
+	.cms_sideframe-frame { width:100%; height:100%; background:#fff;
+		min-width:275px; overflow:hidden; }
+	.cms_sideframe-resize { position:absolute; right:0; top:0; width:2px; height:100%;
 		cursor:col-resize; background:#efefef; }
 }

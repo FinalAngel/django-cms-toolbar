@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 def render_placeholder(placeholder_type=None):
-    if not request.args.get('edit', False):
+    if not request.args.get('edit', False) and not request.args.get('layout', False):
         return ''
     if placeholder_type == 'start':
         index = g.index
@@ -16,7 +16,7 @@ def render_placeholder(placeholder_type=None):
         return Markup('</div>')
 
 def render_placeholder_bar(title=''):
-    if not request.args.get('edit', False):
+    if not request.args.get('layout', False):
         return ''
     return Markup('''
         <div id="cms_placeholder-bar-%s" class="cms_reset cms_placeholder-bar">

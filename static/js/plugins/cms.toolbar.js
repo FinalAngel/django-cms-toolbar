@@ -128,15 +128,21 @@ jQuery(document).ready(function ($) {
 			});
 
 			// autoadd sideframe
-			this.loadSideframe('test/');
+			//this.loadSideframe('test/');
 
 		},
 
 		loadSideframe: function (href) {
 			var iframe = $('<iframe src="'+href+'" class="" frameborder="0" />');
-			var container = this.container.find('#cms_sideframe .cms_sideframe-frame');
+			var container = this.container.find('#cms_sideframe');
+			var holder = container.find('.cms_sideframe-frame');
 
-			container.html(iframe);
+			// show container
+			container.show().css('width', 0).animate({
+				'width': 275
+			});
+
+			holder.html(iframe);
 		}
 
 	});

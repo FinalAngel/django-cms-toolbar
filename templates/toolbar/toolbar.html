@@ -62,7 +62,8 @@ jQuery(document).ready(function ($) {
 				<li{% if not request.args %} class="active"{% endif %}><a href="/"><span>Live</span></a></li>
 				<li{% if request.args %} class="active"{% endif %}><a href="?edit=true"><span>Draft</span></a></li>
 			</ul>
-			{% if g.live and request.args %}
+
+			{% if request.args %}
 			<ul class="cms_toolbar-item cms_toolbar-item_buttons">
 				<li{% if g.edit %} class="active"{% endif %}><a href="?edit=true"><span>Edit</span></a></li>
 				<li{% if g.layout %} class="active"{% endif %}><a href="?layout=true"><span>Layout</span></a></li>
@@ -80,7 +81,7 @@ jQuery(document).ready(function ($) {
 
 	<!-- start: additions -->
 	<div id="cms_sideframe">
-		<div class="cms_sideframe-holder"></div>
+		<div class="cms_sideframe-resize"></div>
 		<div class="cms_sideframe-frame"></div>
 	</div>
 </div>
