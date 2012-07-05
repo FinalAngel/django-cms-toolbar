@@ -8,9 +8,6 @@ env/
 .DS_Store
 .settings
 .project
-.pydevproject
-.installed.cfg
-.mr.developer.cfg
 bin
 develop-eggs
 develop-eggs-src
@@ -24,5 +21,4 @@ build
 .idea/
 .sass-cache/
 tmp/
-bootstrap.py
 personal*.cfg
