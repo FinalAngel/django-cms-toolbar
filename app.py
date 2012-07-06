@@ -18,28 +18,8 @@ def render_placeholder(placeholder_type=None):
 def render_placeholder_bar(title=''):
     if not request.args.get('layout', False):
         return ''
-    return Markup('''
-        <div id="cms_placeholder-bar-%s" class="cms_reset cms_placeholder-bar">
-            <div class="cms_placeholder-title">%s</div>
-            <div class="cms_placeholder-btn">
-                <a href="#"><span>Plugins</span></a>
-                <ul>
-                    <li class="title"><span>Core plugins</span></li>
-                    <li><a href="#">Text</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Picture</a></li>
-                    <li><a href="#">File</a></li>
-                    <li><a href="#">Flash/Video</a></li>
-                    <li class="title"><span>Advanced plugins</span></li>
-                    <li><a href="#">Google Map</a></li>
-                    <li><a href="#">Teaser</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Snippet</a></li>
-                    <li><a href="#">Inherit</a></li>
-                </ul>
-            </div>
-        </div>
-    ''' % (g.index, title))
+    else:
+        return Markup(render_template('toolbar/bar.html', title=title, index=g.index))
 
 @app.context_processor
 def template_tags():
@@ -60,4 +40,11 @@ def index(path='index'):
     return render_template(path)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--public', action='store_true')
+    parser.add_argument('--no-debug', dest='debug', action='store_false')
+    parser.add_argument('--port', default=5000, type=int)
+    args = parser.parse_args()
+    host = '0.0.0.0' if args.public else '127.0.0.1'
+    app.run(debug=args.debug, host=host, port=args.port)
