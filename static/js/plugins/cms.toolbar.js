@@ -32,6 +32,9 @@ jQuery(document).ready(function ($) {
 			// set initial variables
 			this.container = $(container);
 			this.toolbar = this.container.find('.cms_toolbar');
+			this.body = $('body');
+
+			this.sideframe = this.container.find('#cms_sideframe');
 
 			// bind event to toggle button so toolbar can be shown/hidden
 			this.toggle = this.container.find('.cms_toolbar-trigger');
@@ -117,7 +120,9 @@ jQuery(document).ready(function ($) {
 				switch($(this).attr('rel')) {
 					case 'ajax':
 						break;
+						that.loadAjax($(this).attr('href'));
 					case 'modal':
+						that.loadModal();
 						break;
 					case 'sideframe':
 						that.loadSideframe($(this).attr('href'));
@@ -127,22 +132,72 @@ jQuery(document).ready(function ($) {
 				}
 			});
 
+			// attach menu events
+			this._menuEvents();
+
 			// autoadd sideframe
 			//this.loadSideframe('test/');
 
 		},
 
-		loadSideframe: function (href) {
-			var iframe = $('<iframe src="'+href+'" class="" frameborder="0" />');
-			var container = this.container.find('#cms_sideframe');
-			var holder = container.find('.cms_sideframe-frame');
+		_menuEvents: function () {
+			var that = this;
+			var trigger = this.sideframe.find('.cms_sideframe-resize');
 
-			// show container
-			container.show().css('width', 0).animate({
-				'width': 275
+			trigger.bind('mousedown', function (e) {
+				e.preventDefault();
+				that.isResizing = true;
+				that._startResize.call(that);
 			});
+			// we need to listen do the entire document mouseup event
+			$(document).bind('mouseup.cms', function (e) {
+				if(that.isResizing) that._stopResize.call(that);
+			});
+		},
 
+		loadAjax: function (url) {
+			console.log(url);
+		},
+
+		loadModal: function (url) {
+			console.log('modal');
+		},
+
+		loadSideframe: function (url) {
+			var iframe = $('<iframe src="'+url+'" class="" frameborder="0" />');
+			var holder = this.sideframe.find('.cms_sideframe-frame');
+			var width = 275;
+
+			// load iframe content
 			holder.html(iframe);
+
+			// cancel animation if sidebar is already shown
+			if(this.sideframe.is(':visible')) return false;
+			// show container
+			this.sideframe.show().css('width', 0).animate({
+				'width': width
+			});
+			this.body.animate({
+				'margin-left': width
+			});
+		},
+
+		_startResize: function () {
+			var that = this;
+			// disable iframe
+			this.sideframe.find('.cms_sideframe-frame-overlay').css('z-index', 20);
+
+			$(document).bind('mousemove.cms', function (e) {
+				that.sideframe.css('width', e.clientX);
+				that.body.css('margin-left', e.clientX);
+			});
+		},
+
+		_stopResize: function () {
+			console.log('stop');
+			this.sideframe.find('.cms_sideframe-frame-overlay').css('z-index', 1);
+
+			$(document).unbind('mousemove.cms');
 		}
 
 	});
