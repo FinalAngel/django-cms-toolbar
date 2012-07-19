@@ -1,0 +1,37 @@
+#header,#branding h1,#branding h1 a{height:41px;}
+#header{background:#fff url('../img/header.jpg') repeat-x 0px -45px;color:#656565;overflow:hidden;border-bottom:2px solid #DDDDDD;}
+#header a:link, #header a:visited{color:#656565;}
+#header a:hover{text-decoration:underline;}
+#branding h1{margin:0;padding:0;color:#656565;font-size:15px;line-height:40px;text-indent:10px;}
+#branding h1 a{display:block;background:url('../img/header.jpg') no-repeat 0px 0px;text-indent:-7777px;width:115px;}
+#user-tools{position:absolute;top:0;right:0;padding:1.2em 10px;font-size:11px;text-align:right;}
+
+
+.language_button {
+	font-weight:bold;
+	margin-bottom:-1px;
+	border-color:#ddd #aaa #ccc #ddd !important;
+	border:1px;
+	background:#fff url('/static/admin/img/admin/nav-bg.gif') repeat-x center bottom !important;
+}
+
+#lang_tab_content h2.header {
+	margin:0;
+	padding:2px 5px 3px 5px;
+	font-size:11px;
+	text-align:left;
+	font-weight:bold;
+	background:#7ca0c7 url('/static/admin/img/admin/default-bg.gif') repeat-x left top;
+	color:#fff;
+}
+
+.notfilled {
+    color: #808080 !important;
+}
+
+/* responsive hacks */
+.cms-page #container { min-width:0 !important; padding-bottom:20px; padding-left:5px; }
+.cms-page #container h1 { display:none; padding:0 0 5px; font-weight:normal; }
+.cms-page .help, .cms-page form .aligned p, .cms-page form .aligned ul {
+	margin-left:0 !important; padding-left:0 !important; }
+.cms-page .field-box label { float:none !important; width:95% !important; }
