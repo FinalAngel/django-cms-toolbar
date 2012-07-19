@@ -23,7 +23,7 @@
 
 /* #TOOLBAR/wrapper# */
 #cms_toolbar {
-	.cms_toolbar { position:fixed; left:0; top:0; z-index:999999; opacity:1;
+	.cms_toolbar { display:none; position:fixed; left:0; top:0; z-index:999999; opacity:1;
 		width:100%; min-width:320px; border-bottom:1px solid #e1e1e1 !important;
 		background-color:#fcfcfc; /* Old browsers */
 		background:-moz-linear-gradient(top, #fcfcfc 0%, #fefefe 50%, #fcfcfc 100%); /* FF3.6+ */
@@ -102,13 +102,17 @@
 
 /* #TOOLBAR/sideframe# */
 #cms_toolbar {
-	#cms_sideframe { display:none; position:fixed; left:0; top:0; height:100%; z-index:1; overflow:hidden; }
-	#cms_sideframe iframe { height:100%; width:100%;
-		border:none; background:#fff; overflow:hidden; }
+	#cms_sideframe { display:none; position:fixed; left:0; top:0; height:100%; z-index:1; overflow:visible; }
+	#cms_sideframe iframe { height:100%; width:100%; position:relative; top:40px; left:-5px;
+		border:none; background:#fff; overflow:auto; }
 
 	.cms_sideframe-frame { position:relative; z-index:10; width:100%; height:100%; background:#fff;
-		min-width:275px; overflow:hidden; }
-	.cms_sideframe-resize { position:absolute; right:0; top:0; z-index:30; width:5px; height:100%;
+		width:275px; overflow:hidden; }
+	.cms_sideframe-resize { position:absolute; right:0; top:0; z-index:30; width:2px; height:100%;
 		cursor:col-resize; background:#efefef; }
-	.cms_sideframe-frame-overlay { position:absolute; left:0; top:0; z-index:1; width:100%; height:100%; background:transparent; }
+	.cms_sideframe-frame-overlay { position:absolute; left:0; top:0; z-index:1; width:100%; height:100%;
+		background:transparent; }
+
+	.cms_sideframe-knob { width:6px; height:50px; background:#6482b0;
+		position:absolute; right:-2px; top:50%; margin-top:-15px; @include border-radius(3px); }
 }

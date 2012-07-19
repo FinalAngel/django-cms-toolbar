@@ -13,7 +13,7 @@
 </head>
 <body class="no-js tpl_master en anonymus">
 
-{% include 'toolbar/toolbar.html' %}
+{% if not request.args.get('logout') %}{% include 'toolbar/toolbar.html' %}{% endif %}
 {% include 'content.html' %}
 
 <!-- include javascript -->

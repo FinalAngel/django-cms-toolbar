@@ -39,6 +39,34 @@ def index(path='index'):
     path = '%s.html' % os.path.splitext(path)[0].rstrip('/')
     return render_template(path)
 
+@app.route('/admin/')
+def cms_admin():
+    return render_template('admin/login.html')
+
+@app.route('/admin/cms/page/')
+def cms_page():
+    return render_template('admin/page.html')
+
+@app.route('/admin/auth/user/')
+def cms_user():
+    return render_template('admin/user.html')
+
+@app.route('/admin/logout/')
+def cms_logout():
+    return 'logout'
+
+@app.route('/admin/cms/page/1/delete/')
+def cms_delete():
+    return 'delete'
+
+@app.route('/admin/cms/page/1/change_template/')
+def cms_template():
+    return 'template'
+
+@app.route('/admin/cms/page/1/')
+def cms_settings():
+    return render_template('admin/settings.html')
+
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()

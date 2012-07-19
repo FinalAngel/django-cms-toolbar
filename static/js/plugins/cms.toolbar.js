@@ -52,6 +52,15 @@ jQuery(document).ready(function ($) {
 		 */
 		_setup: function () {
 
+			// decide to hide or show the toolbar
+			(this._getStorage('toolbar-active') === 'true') ? this._showToolbar(true) : this._hideToolbar(true);
+
+			// disable initial handler
+			this.container.find('.cms_toolbar-item_navigation-disabled').live('click', function (e) {
+				e.preventDefault();
+				console.log('can\'t touch me');
+			});
+
 			// handle related menu functionality
 			this._menu();
 		},
@@ -67,22 +76,23 @@ jQuery(document).ready(function ($) {
 		 * Saves current state in a cookie
 		 */
 		toggleToolbar: function () {
-			console.log(this.toolbar.data('collapsed'));
 			(this.toolbar.data('collapsed')) ? this._showToolbar() : this._hideToolbar();
 
 			return this.toolbar.data('collapsed');
 		},
 
 		// sets collapsed data to false
-		_showToolbar: function () {
+		_showToolbar: function (initial) {
 			// show toolbar
-			this.toolbar.slideDown(200);
+			(initial) ? this.toolbar.show() : this.toolbar.slideDown(200);
 			// change data information
 			this.toolbar.data('collapsed', false);
 			// remove class from trigger
 			this.toggle.removeClass('cms_toolbar-collapsed');
 			// add show event to toolbar
 			this.toolbar.trigger('cms.toolbar.show');
+			// save state
+			this._setStorage('toolbar-active', true);
 		},
 
 		// sets collapsed data to true
@@ -95,6 +105,8 @@ jQuery(document).ready(function ($) {
 			this.toggle.addClass('cms_toolbar-collapsed');
 			// add hide event to toolbar
 			this.toolbar.trigger('cms.toolbar.hide');
+			// save state
+			this._setStorage('toolbar-active', false);
 		},
 
 		_menu: function () {
@@ -119,8 +131,8 @@ jQuery(document).ready(function ($) {
 				// open sideframe with content
 				switch($(this).attr('rel')) {
 					case 'ajax':
+						that.loadAjax($(this).attr('href'), $(this));
 						break;
-						that.loadAjax($(this).attr('href'));
 					case 'modal':
 						that.loadModal();
 						break;
@@ -155,8 +167,38 @@ jQuery(document).ready(function ($) {
 			});
 		},
 
-		loadAjax: function (url) {
-			console.log(url);
+		loadAjax: function (url, el) {
+			var that = this;
+
+			$.ajax({
+				'method': 'post',
+				'data': {},
+				'url': url,
+				'success': function (data) {
+					// handle logout for prototype
+					if(data === 'logout') window.location = '?logout=true';
+					// handle delete for prototype
+					if(data === 'delete') {
+						// TODO we might want to trigger a customized modal window
+						var q = confirm('Are you sure you want to delete this page');
+						if(q) window.location.reload();
+					}
+					if(data === 'template') {
+						// cancel if the template is already selected
+						if(el.parent().hasClass('active')) return false;
+
+						el.closest('ul').find('li').removeClass('active');
+						el.parent().addClass('active');
+						// some delay to show that the template is changed for prototypal purpose
+						setTimeout(function () {
+							window.location.reload();
+						}, 1000);
+					}
+				},
+				'error': function () {
+					that._showError('The ajax request could not be called.');
+				}
+			});
 		},
 
 		loadModal: function (url) {
@@ -189,6 +231,7 @@ jQuery(document).ready(function ($) {
 
 			$(document).bind('mousemove.cms', function (e) {
 				that.sideframe.css('width', e.clientX);
+				that.sideframe.find('.cms_sideframe-frame').css('width', e.clientX);
 				that.body.css('margin-left', e.clientX);
 			});
 		},
@@ -198,6 +241,25 @@ jQuery(document).ready(function ($) {
 			this.sideframe.find('.cms_sideframe-frame-overlay').css('z-index', 1);
 
 			$(document).unbind('mousemove.cms');
+		},
+
+		_showError: function (msg) {
+			return new Error(msg);
+		},
+
+		// TODO FOR DEVELOPMENT ONLY
+		_setStorage: function (attribute, value) {
+			// cancel if this feature is not supported by some browser
+			if($.browser.msie) return false;
+			// save storage
+			localStorage.setItem(attribute, value);
+		},
+
+		_getStorage: function (attribute) {
+			// cancel if feature is not supported by some browser
+			if($.browser.msie) return false;
+			// retrieve storage
+			return localStorage.getItem(attribute);
 		}
 
 	});
