@@ -1,0 +1,64 @@
+{% extends "admin/tpl_admin.html" %}
+
+{% block title %}Site administration{% endblock title %}
+
+{% block content %}
+<div class="module">
+	<table summary="Models available in the Auth application.">
+		<caption><a class="section" href="auth/">Auth</a></caption>
+		<tbody>
+		<tr>
+			<th scope="row"><a href="auth/group/">Groups</a></th>
+			<td><a class="addlink" href="auth/group/add/">Add</a></td>
+			<td><a class="changelink" href="auth/group/">Change</a></td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="auth/user/">Users</a></th>
+			<td><a class="addlink" href="auth/user/add/">Add</a></td>
+			<td><a class="changelink" href="auth/user/">Change</a></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="module">
+	<table summary="Models available in the Cms application.">
+		<caption><a class="section" href="cms/">Cms</a></caption>
+		<tbody>
+		<tr>
+			<th scope="row"><a href="cms/page/">Pages</a></th>
+			<td><a class="addlink" href="cms/page/add/">Add</a></td>
+			<td><a class="changelink" href="cms/page/">Change</a></td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="cms/globalpagepermission/">Pages global permissions</a></th>
+			<td><a class="addlink" href="cms/globalpagepermission/add/">Add</a></td>
+			<td><a class="changelink" href="cms/globalpagepermission/">Change</a></td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="cms/pageusergroup/">User groups (page)</a></th>
+			<td><a class="addlink" href="cms/pageusergroup/add/">Add</a></td>
+			<td><a class="changelink" href="cms/pageusergroup/">Change</a></td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="cms/pageuser/">Users (page)</a></th>
+			<td><a class="addlink" href="cms/pageuser/add/">Add</a></td>
+			<td><a class="changelink" href="cms/pageuser/">Change</a></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="module">
+	<table summary="Models available in the Snippet application.">
+		<caption><a class="section" href="snippet/">Snippet</a></caption>
+		<tbody>
+		<tr>
+			<th scope="row"><a href="snippet/snippet/">Snippets</a></th>
+			<td><a class="addlink" href="snippet/snippet/add/">Add</a></td>
+			<td><a class="changelink" href="snippet/snippet/">Change</a></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock content %}

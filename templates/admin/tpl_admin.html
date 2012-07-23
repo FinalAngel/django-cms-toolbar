@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" >
+<head>
+<title>Change a page</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/divio.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css" />
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/static/admin/css/ie.css" /><![endif]-->
+<script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+<body class="cms-page change-form">
+
+<!-- cms controls -->
+<div id="cms_sideframe-controls" class="cms_reset">
+	<div class="cms_sideframe-header">Settings</div>
+	<a href="#" class="cms_sideframe-close">close sidebar</a>
+</div>
+
+<!-- Container -->
+<div id="container">
+	<!-- Content -->
+	<div id="content">
+		<h1>{% block title %}{% endblock title %}</h1>
+		<div id="content-main">{% block content %}{% endblock content %}</div>
+		<br class="clear" />
+	</div>
+</div>
+<!-- END Container -->
+</body>
+</html>

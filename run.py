@@ -67,6 +67,10 @@ def cms_template():
 def cms_settings():
     return render_template('admin/settings.html')
 
+@app.route('/admin/dashboard/')
+def cms_dashboard():
+    return render_template('admin/dashboard.html')
+
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()

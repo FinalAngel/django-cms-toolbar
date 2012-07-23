@@ -1,6 +1,49 @@
+{% extends "admin/tpl_admin.html" %}
 
+{% block title %}Select page to change{% endblock title %}
 
+{% block content %}
+<div id="changelist" class="module filtered">
+	<form method="post" action="" id="changelist-form">
+		<div style="display:none"><input type="hidden" value="7a3c7f42c70332961b06e5a47ece5119" name="csrfmiddlewaretoken"></div>
 
+		<div class="results">
+			<table cellspacing="0" id="result_list">
+			<thead>
+				<tr>
+					<th class="action-checkbox-column" scope="col"><input type="checkbox" id="action-toggle" style="display: inline;"></th>
+					<th class="sorted ascending" scope="col"><a href="?ot=desc&amp;o=1">Page</a></th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr class="row1">
+				<td class="action-checkbox"><input type="checkbox" name="_selected_action" value="1" class="action-select"></td>
+				<th><a href="1/">Home</a></th>
+			</tr>
+			<tr class="row2">
+				<td class="action-checkbox"><input type="checkbox" name="_selected_action" value="1" class="action-select"></td>
+				<th><a href="1/">Content</a></th>
+			</tr>
+			<tr class="row1">
+				<td class="action-checkbox"><input type="checkbox" name="_selected_action" value="1" class="action-select"></td>
+				<th><a href="1/">About Us</a></th>
+			</tr>
+			<tr class="row2">
+				<td class="action-checkbox"><input type="checkbox" name="_selected_action" value="1" class="action-select"></td>
+				<th><a href="1/">Impressum</a></th>
+			</tr>
+			</tbody>
+			</table>
+		</div>
 
-<h1>Page</h1>
-<p>this is some content</p>
+		<p class="paginator">4 pages</p>
+	</form>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<ul class="object-tools">
+	<li><a class="addlink" href="add/">Add page</a></li>
+</ul>
+{% endblock content %}

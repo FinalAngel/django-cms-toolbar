@@ -1,82 +1,54 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" >
-<head>
-<title>Change a page</title>
-<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
-<link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css" />
-<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
-<link rel="stylesheet" type="text/css" href="/static/admin/css/divio.css" />
-<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
-<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/static/admin/css/ie.css" /><![endif]-->
-<script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
-<meta name="robots" content="NONE,NOARCHIVE" />
-</head>
-<body class="cms-page change-form">
+{% extends "admin/tpl_admin.html" %}
 
-<!-- cms controls -->
-<div id="cms_sideframe-controls" class="cms_reset">
-	<div class="cms_sideframe-header">Settings</div>
-	<a href="#" class="cms_sideframe-close">close sidebar</a>
-</div>
+{% block title %}Change page{% endblock title %}
 
-<!-- Container -->
-<div id="container">
-	<!-- Content -->
-	<div id="content" class="colM">
-		<h1>Change page</h1>
-		<div id="content-main">
-			<form enctype="multipart/form-data" action="?language=en&amp;" method="post" id="page_form">
-				<div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='7a3c7f42c70332961b06e5a47ece5119' /></div>
-				<div style="display: none;"><input type="hidden" name="language" value="en" id="id_language"/></div>
-				<div id="page_form_lang_tabs">
-					<input type="button" onclick="trigger_lang_button(this,'./?language=de');" class="language_button  notfilled" id="debutton" name="de" value="German" />
-					<input type="button" onclick="trigger_lang_button(this,'./?language=fr');" class="language_button  notfilled" id="debutton" name="fr" value="French" />
-					<input type="button" onclick="trigger_lang_button(this,'./?language=en');" class="language_button selected" id="debutton" name="en" value="English" />
-				</div>
-				<div id="lang_tab_content">
-					<h2 class="header"></h2>
-					<fieldset class="module aligned general">
-						<div class="form-row title menu_title">
-							<div class="field-box">
-								<label for="id_title" class="required">Title:</label><input type="text" name="title" value="Home" id="id_title" />
-								<p class="help">The default title</p>
-							</div>
-							<div class="field-box">
-								<label for="id_menu_title" class="inline">Menu Title:</label><input type="text" name="menu_title" id="id_menu_title" />
-								<p class="help">Overwrite what is displayed in the menu</p>
-							</div>
-						</div>
-						<div class="form-row slug">
-							<div>
-								<label for="id_slug" class="required">Slug:</label><input type="text" name="slug" value="home" id="id_slug" />
-								<p class="help">The part of the title that is used in the URL</p>
-							</div>
-						</div>
-						<div class="form-row published in_navigation">
-							<div class="field-box">
-								<input checked="checked" type="checkbox" name="published" id="id_published" /><label for="id_published" class="vCheckboxLabel">Is published</label>
-							</div>
-							<div class="field-box">
-								<input type="checkbox" name="in_navigation" id="id_in_navigation" /><label for="id_in_navigation" class="vCheckboxLabel inline">In navigation</label>
-							</div>
-						</div>
-						<div class="form-row publication_date publication_end_date">
-							<div class="field-box">
-								<label for="id_publication_date_0">Publication date:</label><p class="datetime">Date: <input name="publication_date_0" value="2012-05-23" class="vDateField" type="text" id="id_publication_date_0" size="10" /><br />Time: <input name="publication_date_1" value="10:30:48" class="vTimeField" type="text" id="id_publication_date_1" size="8" /></p>
-								<p class="help">When the page should go live. Status must be "Published" for page to go live.</p>
-							</div>
-							<div class="field-box">
-								<label for="id_publication_end_date_0" class="inline">Publication end date:</label><p class="datetime">Date: <input id="id_publication_end_date_0" type="text" class="vDateField" name="publication_end_date_0" size="10" /><br />Time: <input id="id_publication_end_date_1" type="text" class="vTimeField" name="publication_end_date_1" size="8" /></p>
-								<p class="help">When to expire the page. Leave empty to never expire.</p>
-							</div>
-						</div>
-					</fieldset>
-				</div>
-			</form>
-		</div>
-		<br class="clear" />
+{% block content %}
+<form enctype="multipart/form-data" action="?language=en&amp;" method="post" id="page_form">
+	<div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='7a3c7f42c70332961b06e5a47ece5119' /></div>
+	<div style="display: none;"><input type="hidden" name="language" value="en" id="id_language"/></div>
+	<div id="page_form_lang_tabs">
+		<input type="button" onclick="trigger_lang_button(this,'./?language=de');" class="language_button  notfilled" id="debutton" name="de" value="German" />
+		<input type="button" onclick="trigger_lang_button(this,'./?language=fr');" class="language_button  notfilled" id="debutton" name="fr" value="French" />
+		<input type="button" onclick="trigger_lang_button(this,'./?language=en');" class="language_button selected" id="debutton" name="en" value="English" />
 	</div>
-</div>
-<!-- END Container -->
-</body>
-</html>
+	<div id="lang_tab_content">
+		<h2 class="header"></h2>
+		<fieldset class="module aligned general">
+			<div class="form-row title menu_title">
+				<div class="field-box">
+					<label for="id_title" class="required">Title:</label><input type="text" name="title" value="Home" id="id_title" />
+					<p class="help">The default title</p>
+				</div>
+				<div class="field-box">
+					<label for="id_menu_title" class="inline">Menu Title:</label><input type="text" name="menu_title" id="id_menu_title" />
+					<p class="help">Overwrite what is displayed in the menu</p>
+				</div>
+			</div>
+			<div class="form-row slug">
+				<div>
+					<label for="id_slug" class="required">Slug:</label><input type="text" name="slug" value="home" id="id_slug" />
+					<p class="help">The part of the title that is used in the URL</p>
+				</div>
+			</div>
+			<div class="form-row published in_navigation">
+				<div class="field-box">
+					<input checked="checked" type="checkbox" name="published" id="id_published" /><label for="id_published" class="vCheckboxLabel">Is published</label>
+				</div>
+				<div class="field-box">
+					<input type="checkbox" name="in_navigation" id="id_in_navigation" /><label for="id_in_navigation" class="vCheckboxLabel inline">In navigation</label>
+				</div>
+			</div>
+			<div class="form-row publication_date publication_end_date">
+				<div class="field-box">
+					<label for="id_publication_date_0">Publication date:</label><p class="datetime">Date: <input name="publication_date_0" value="2012-05-23" class="vDateField" type="text" id="id_publication_date_0" size="10" /><br />Time: <input name="publication_date_1" value="10:30:48" class="vTimeField" type="text" id="id_publication_date_1" size="8" /></p>
+					<p class="help">When the page should go live. Status must be "Published" for page to go live.</p>
+				</div>
+				<div class="field-box">
+					<label for="id_publication_end_date_0" class="inline">Publication end date:</label><p class="datetime">Date: <input id="id_publication_end_date_0" type="text" class="vDateField" name="publication_end_date_0" size="10" /><br />Time: <input id="id_publication_end_date_1" type="text" class="vTimeField" name="publication_end_date_1" size="8" /></p>
+					<p class="help">When to expire the page. Leave empty to never expire.</p>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+</form>
+{% endblock content %}

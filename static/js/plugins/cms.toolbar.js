@@ -214,6 +214,16 @@ jQuery(document).ready(function ($) {
 			// load iframe content
 			holder.html(iframe);
 
+			iframe.load(function () {
+				// set close event
+				console.log('load');
+
+				var close = that.sideframe.find('iframe').contents().find('.cms_sideframe-close');
+					close.bind('click', function (e) {
+						that.unloadSideframe();
+					});
+			});
+
 			// cancel animation if sidebar is already shown
 			if(this.sideframe.is(':visible')) return false;
 			// show container
@@ -222,14 +232,6 @@ jQuery(document).ready(function ($) {
 			});
 			this.body.animate({
 				'margin-left': width
-			});
-
-			iframe.load(function () {
-				// set close event
-				var close = that.sideframe.find('iframe').contents().find('.cms_sideframe-close');
-					close.bind('click', function (e) {
-						that.unloadSideframe();
-					});
 			});
 		},
 

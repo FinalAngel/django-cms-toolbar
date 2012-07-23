@@ -56,3 +56,6 @@ body { margin:75px 0 0 0; }
 			background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#f9f9f9));
 			background:-moz-linear-gradient(top,  #fff,  #f9f9f9);
 			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f9f9f9'); }
+
+table { width:100%; }
+table th { width:100%; }
