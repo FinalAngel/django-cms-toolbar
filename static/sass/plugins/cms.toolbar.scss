@@ -103,12 +103,11 @@
 /* #TOOLBAR/sideframe# */
 #cms_toolbar {
 	#cms_sideframe { display:none; position:fixed; left:0; top:0; height:100%; z-index:1; overflow:visible; }
-	#cms_sideframe iframe { height:100%; width:100%; position:relative; top:40px; left:-5px;
-		border:none; background:#fff; overflow:auto; }
+	#cms_sideframe iframe { height:100%; width:100%; border:none; background:#fff; overflow:auto; }
 
 	.cms_sideframe-frame { position:relative; z-index:10; width:100%; height:100%; background:#fff;
 		width:275px; overflow:hidden; }
-	.cms_sideframe-resize { position:absolute; right:0; top:0; z-index:30; width:2px; height:100%;
+	.cms_sideframe-resize { position:absolute; right:-2px; top:0; z-index:30; width:2px; height:100%;
 		cursor:col-resize; background:#efefef; }
 	.cms_sideframe-frame-overlay { position:absolute; left:0; top:0; z-index:1; width:100%; height:100%;
 		background:transparent; }

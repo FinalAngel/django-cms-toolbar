@@ -206,6 +206,7 @@ jQuery(document).ready(function ($) {
 		},
 
 		loadSideframe: function (url) {
+			var that = this;
 			var iframe = $('<iframe src="'+url+'" class="" frameborder="0" />');
 			var holder = this.sideframe.find('.cms_sideframe-frame');
 			var width = 275;
@@ -222,6 +223,20 @@ jQuery(document).ready(function ($) {
 			this.body.animate({
 				'margin-left': width
 			});
+
+			iframe.load(function () {
+				// set close event
+				var close = that.sideframe.find('iframe').contents().find('.cms_sideframe-close');
+					close.bind('click', function (e) {
+						that.unloadSideframe();
+					});
+			});
+		},
+
+		unloadSideframe: function () {
+			this.sideframe.find('iframe').remove();
+			this.sideframe.hide().css('width', 0);
+			this.body.animate({ 'margin-left': 0 });
 		},
 
 		_startResize: function () {
