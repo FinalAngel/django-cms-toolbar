@@ -1,8 +1,10 @@
 /*##################################################|*/
-/* #CMS.PLACEHOLDERS# */
-CMS.$(document).ready(function ($) {
+/* #CMS.TOOLBAR# */
+var CMS = CMS || {};
+
+jQuery(document).ready(function ($) {
 	// assign correct jquery to $ namespace
-	$ = CMS.$ || $;
+	// $ = CMS.$ || $;
 
 	/*!
 	 * Placeholders
@@ -15,7 +17,7 @@ CMS.$(document).ready(function ($) {
 	 * @compatibility: IE >= 6, FF >= 2, Safari >= 4, Chrome > =4, Opera >= 10
 	 */
 
-	CMS.Placeholders = CMS.Class.$extend({
+	CMS.Placeholders = new Class({
 
 		options: {
 			'debug': false, // not integrated yet
@@ -29,9 +31,30 @@ CMS.$(document).ready(function ($) {
 
 		initialize: function (container, options) {
 			// merge argument options with internal options
-			this.options = $.extend(this.options, options);
+			//this.options = $.extend(this.options, options);
 			
+			var overlay = $('.cms_placeholders-overlay');
+
 			// save placeholder elements
+			// TODO we need to add scropp top and left
+			$(document.body).bind('mousemove.cms', function (e) {
+				overlay.css({
+					'left': e.pageX + 20,
+					'top': e.pageY - 5
+				});
+			});
+
+
+			$('.cms_placeholder').each(function (index, item) {
+				var placeholder = $(item);
+
+				placeholder.bind('mouseenter mouseleave', function (e) {
+					(e.type === 'mouseenter') ? overlay.show() : overlay.hide();
+				});
+			});
+
+
+			/*
 			this.wrapper = $(container);
 			this.toolbar = this.wrapper.find('#cms_toolbar-toolbar');
 			this.dim = this.wrapper.find('#cms_placeholder-dim');
@@ -43,6 +66,7 @@ CMS.$(document).ready(function ($) {
 
 			// setup everything
 			this._setup();
+			*/
 		},
 		
 		_setup: function () {
@@ -478,12 +502,14 @@ CMS.$(document).ready(function ($) {
 	 * @version: 1.0.0
 	 * @description: Handles each placeholder separately
 	 */
-	CMS.Placeholder = CMS.Class.$extend({
+	CMS.Placeholder = new Class({
 
 		initialize: function (container, options) {
 			// save reference to this class
 			var that = this;
 
+
+			/*
 			// do not merge options here
 			this.options = options;
 			this.container = $(container);
@@ -501,7 +527,7 @@ CMS.$(document).ready(function ($) {
 				this.container.bind('mouseenter', function (e) {
 					that._holders.call(that, e.currentTarget);
 				});
-			}
+			}*/
 		},
 
 		/* this private method controls the buttons on the bar (add plugins) */

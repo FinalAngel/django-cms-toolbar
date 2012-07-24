@@ -5,12 +5,14 @@
 <script type="text/javascript" src="/static/js/libs/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/libs/class.min.js"></script>
 <script type="text/javascript" src="/static/js/plugins/cms.toolbar.js"></script>
+<script type="text/javascript" src="/static/js/plugins/cms.placeholders.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/static/css/plugins/cms.toolbar.css" />
 <link rel="stylesheet" type="text/css" href="/static/css/plugins/cms.placeholders.css" />
 <script type="text/javascript">
 jQuery(document).ready(function ($) {
 	new CMS.Toolbar('#cms_toolbar');
+	new CMS.Placeholders();
 });
 </script>
 <script type="text/javascript">
@@ -85,4 +87,6 @@ jQuery(document).ready(function ($) {
 		<div class="cms_sideframe-frame"></div>
 		<div class="cms_sideframe-frame-overlay"></div>
 	</div>
+
+	<div class="cms_placeholders-overlay">Editable</div>
 </div>
