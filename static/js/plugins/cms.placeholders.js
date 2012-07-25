@@ -21,7 +21,7 @@ jQuery(document).ready(function ($) {
 
 		options: {
 			'debug': false, // not integrated yet
-			'edit_mode': false,
+			'mode': '', // edit, layout, view
 			'lang': {
 				'move_warning': '',
 				'delete_request': '',
@@ -31,27 +31,17 @@ jQuery(document).ready(function ($) {
 
 		initialize: function (container, options) {
 			// merge argument options with internal options
-			//this.options = $.extend(this.options, options);
-			
-			var overlay = $('.cms_placeholders-overlay');
+			this.options = $.extend(this.options, options);
+			// class vars
+			this.placeholders = $('.cms_placeholder');
 
-			// save placeholder elements
-			// TODO we need to add scropp top and left
-			$(document.body).bind('mousemove.cms', function (e) {
-				overlay.css({
-					'left': e.pageX + 20,
-					'top': e.pageY - 5
-				});
-			});
+			// adds editable tooltip in edit mode
+			this._tooltip();
 
-
-			$('.cms_placeholder').each(function (index, item) {
-				var placeholder = $(item);
-
-				placeholder.bind('mouseenter mouseleave', function (e) {
-					(e.type === 'mouseenter') ? overlay.show() : overlay.hide();
-				});
-			});
+			// TODO placeholder call for testing
+			// TODO IF EDIT MODE
+			this._registerPlaceholders();
+			this._preventEvents();
 
 
 			/*
@@ -68,6 +58,96 @@ jQuery(document).ready(function ($) {
 			this._setup();
 			*/
 		},
+
+		_tooltip: function () {
+			var tooltip = $('.cms_placeholders-tooltip');
+
+			// save placeholder elements
+			$(document.body).bind('mousemove.cms', function (e) {
+				tooltip.css({
+					'left': e.pageX + 20,
+					'top': e.pageY - 5
+				});
+			});
+
+			// add tooltip event to every placeholder
+			this.placeholders.each(function (index, item) {
+				var placeholder = $(item);
+					placeholder.bind('mouseenter.cms mouseleave.cms', function (e) {
+						(e.type === 'mouseenter') ? tooltip.show() : tooltip.hide();
+					});
+			});
+		},
+
+		_registerPlaceholders: function () {
+			var that = this;
+
+			this.placeholders.bind('dblclick', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				// reset click and button events if dblclick
+				clearTimeout(that.eventTimer);
+
+				var id = parseInt($(this).attr('id').split('-')[1]);
+				console.log(id);
+			});
+		},
+
+		_preventEvents: function () {
+			var clicks = 0;
+			var delay = 500;
+			var timer = function () {};
+			var prevent = true;
+
+			$('a, button, input[type="submit"], input[type="button"]').bind('click', function (e) {
+				if (prevent) {
+					e.preventDefault();
+
+					// clear timeout after click and increment
+					clearTimeout(timer);
+
+					timer = setTimeout(function () {
+						// if there is only one click use standard event
+						if(clicks === 1) {
+							prevent = false;
+
+							$(e.currentTarget)[0].click();
+						}
+						// reset
+						clicks = 0;
+					}, delay);
+
+					clicks++;
+				}
+
+			});
+		},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 		_setup: function () {
 			// save reference to this class
