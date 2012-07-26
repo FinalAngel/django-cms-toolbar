@@ -66,7 +66,7 @@ jQuery(document).ready(function ($) {
 			$(document.body).bind('mousemove.cms', function (e) {
 				tooltip.css({
 					'left': e.pageX + 20,
-					'top': e.pageY - 5
+					'top': e.pageY - 10
 				});
 			});
 
@@ -90,7 +90,8 @@ jQuery(document).ready(function ($) {
 				clearTimeout(that.eventTimer);
 
 				var id = parseInt($(this).attr('id').split('-')[1]);
-				console.log(id);
+
+				that._loadModal(id);
 			});
 		},
 
@@ -124,7 +125,103 @@ jQuery(document).ready(function ($) {
 			});
 		},
 
+		_loadModal: function (id) {
+			var that = this;
+			var tooltip = $('.cms_placeholders-tooltip');
 
+			// set loader
+			tooltip.html('<span style="display:block; line-height:1px; font-size:1px;"><img src="/static/img/toolbar/loader.gif" alt="" style="padding-top:2px;" /></span>');
+
+			// prepare fake html
+			var html = '<div id="cms_toolbar-modal" class="cms_toolbar-modal">' +
+					   '    <div class="cms_toolbar-modal-collapse">minimize <span>-</span></div>' +
+					   '    <div class="cms_toolbar-modal-title"></div>' +
+					   '    <div class="cms_toolbar-modal-iframe"></div>' +
+					   '</div>';
+
+			// do some ajax stuff with the id
+			$.ajax({
+				'method': 'post',
+				'url': '',
+				'data': id,
+				'success': function () {
+					// artificial timeout
+					setTimeout(function () {
+						// reset tooltip
+						tooltip.html('Edit');
+						// show the modal
+						that._destroyModal();
+						that._renderModal({
+							'html': html,
+							'title': 'Multicolumn'
+						});
+					}, 1000);
+				}
+			});
+		},
+
+		_renderModal: function (data) {
+			$(document.body).append(data.html);
+
+			// set vars
+			var that = this;
+			var container = $('#cms_toolbar-modal');
+
+			var modal = container.find('.cms_toolbar-modal');
+			var frame = container.find('.cms_toolbar-modal-iframe');
+			var title = container.find('.cms_toolbar-modal-title');
+			var minimize = container.find('.cms_toolbar-modal-collapse');
+
+			// set title
+			title.text(data.title);
+
+			// set minimize event
+			minimize.bind('click', function () {
+				if(minimize.data('collapsed')) {
+					frame.show();
+					container.css('width', 'auto');
+					minimize.html('minimize <span>-</span>');
+					minimize.data('collapsed', false)
+				} else {
+					frame.hide();
+					container.css('width', 300);
+					minimize.html('maximize <span>+</span>');
+					minimize.data('collapsed', true)
+				}
+			});
+
+			// attach drag and move events
+			title.bind('mousedown', function (e) {
+				e.preventDefault();
+				that._startMove.call(that, e);
+			});
+			// we need to listen do the entire document mouseup event
+			$(document).bind('mouseup.cms', function (e) {
+				that._stopMove.call(that);
+			});
+		},
+
+		_destroyModal: function () {
+			$('#cms_toolbar-modal').remove();
+		},
+
+		_startMove: function (initial) {
+			var container = $('#cms_toolbar-modal');
+			var position = container.position();
+			var initX = initial.pageX;
+			var initY = initial.pageY;
+
+			$(document).bind('mousemove.cms', function (e) {
+				container.css({
+					'left': position.left - (initX - e.pageX) - $(window).scrollLeft(),
+					'top': position.top - (initY - e.pageY) - $(window).scrollTop()
+				});
+			});
+		},
+
+		_stopMove: function () {
+			$(document).unbind('mousemove.cms');
+		},
 
 
 

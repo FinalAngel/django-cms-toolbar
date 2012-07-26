@@ -216,8 +216,6 @@ jQuery(document).ready(function ($) {
 
 			iframe.load(function () {
 				// set close event
-				console.log('load');
-
 				var close = that.sideframe.find('iframe').contents().find('.cms_sideframe-close');
 					close.bind('click', function (e) {
 						that.unloadSideframe();
@@ -254,7 +252,6 @@ jQuery(document).ready(function ($) {
 		},
 
 		_stopResize: function () {
-			console.log('stop');
 			this.sideframe.find('.cms_sideframe-frame-overlay').css('z-index', 1);
 
 			$(document).unbind('mousemove.cms');

@@ -55,10 +55,6 @@
 */
 .cms_placeholder { display:inline; cursor:pointer; cursor:hand; }
 
-
-
-
-
 #cms_toolbar {
 	.cms_placeholders-tooltip { display:none; position:absolute; margin:0; padding:2px 12px;
 		color:#6482b0; font-size:11px; text-transform:uppercase; font-weight:bold;
@@ -74,6 +70,17 @@
 		@include border-radius(3px);  @include box-shadow(0 0 2px #e1e1e1); }
 }
 
+#cms_toolbar-modal { position:fixed; left:40%; top:30%; z-index:999999;
+	@include border-radius(10px); @include box-shadow(0 0 5px #f4f4f4);
+	border:1px solid #f4f4f4; background:#fdfdfd; }
+#cms_toolbar-modal {
+	.cms_toolbar-modal-title { cursor:move; font-size:12px; text-transform:uppercase; color:#666; font-weight:bold;
+		padding:12px 20px; }
+	.cms_toolbar-modal-iframe { width:300px; height:100px; margin:0 10px 10px; border:1px solid #e4e4e4; @include border-radius(5px); }
+	.cms_toolbar-modal-collapse { float:right; font-size:11px; color:#666; font-weight:bold; cursor:pointer;
+		padding:0 20px 0 0; position:relative; top:13px; }
+	.cms_toolbar-modal-collapse span { color:#cfcfcf; }
+}
 
 
 
