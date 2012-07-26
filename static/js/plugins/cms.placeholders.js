@@ -86,6 +86,8 @@ jQuery(document).ready(function ($) {
 				e.preventDefault();
 				e.stopPropagation();
 
+				that.event = e;
+
 				// reset click and button events if dblclick
 				clearTimeout(that.eventTimer);
 
@@ -134,9 +136,11 @@ jQuery(document).ready(function ($) {
 
 			// prepare fake html
 			var html = '<div id="cms_toolbar-modal" class="cms_toolbar-modal">' +
-					   '    <div class="cms_toolbar-modal-collapse">minimize <span>-</span></div>' +
+					   '    <div class="cms_toolbar-modal-close">X</div>' +
+					   '    <div class="cms_toolbar-modal-collapse">minimize <span>–</span></div>' +
 					   '    <div class="cms_toolbar-modal-title"></div>' +
-					   '    <div class="cms_toolbar-modal-iframe"></div>' +
+					   '    <div class="cms_toolbar-modal-resize"></div>' +
+					   '    <div class="cms_toolbar-modal-iframe"><div class="shim"></div></div>' +
 					   '</div>';
 
 			// do some ajax stuff with the id
@@ -153,7 +157,8 @@ jQuery(document).ready(function ($) {
 						that._destroyModal();
 						that._renderModal({
 							'html': html,
-							'title': 'Multicolumn'
+							'title': 'Multicolumn',
+							'url': '/admin/cms/page/1/'
 						});
 					}, 1000);
 				}
@@ -166,11 +171,17 @@ jQuery(document).ready(function ($) {
 			// set vars
 			var that = this;
 			var container = $('#cms_toolbar-modal');
+				container.hide();
 
 			var modal = container.find('.cms_toolbar-modal');
 			var frame = container.find('.cms_toolbar-modal-iframe');
 			var title = container.find('.cms_toolbar-modal-title');
 			var minimize = container.find('.cms_toolbar-modal-collapse');
+			var close = container.find('.cms_toolbar-modal-close');
+			var resize = container.find('.cms_toolbar-modal-resize');
+
+			// set iframe content
+			frame.append('<iframe style="width:100%; height:100%; border:none;" src="' + data.url + '" />');
 
 			// set title
 			title.text(data.title);
@@ -179,33 +190,81 @@ jQuery(document).ready(function ($) {
 			minimize.bind('click', function () {
 				if(minimize.data('collapsed')) {
 					frame.show();
-					container.css('width', 'auto');
-					minimize.html('minimize <span>-</span>');
+					container.css('width', '80%');
+					minimize.html('minimize <span>–</span>');
 					minimize.data('collapsed', false)
 				} else {
 					frame.hide();
-					container.css('width', 300);
+					container.css('width', 300).css('height', 'auto');
 					minimize.html('maximize <span>+</span>');
 					minimize.data('collapsed', true)
 				}
+			});
+
+			// attach close event
+			close.bind('click', function (e) {
+				e.preventDefault();
+
+				that._destroyModal();
 			});
 
 			// attach drag and move events
 			title.bind('mousedown', function (e) {
 				e.preventDefault();
 				that._startMove.call(that, e);
+				frame.find('.shim').show();
 			});
 			// we need to listen do the entire document mouseup event
 			$(document).bind('mouseup.cms', function (e) {
 				that._stopMove.call(that);
+				frame.find('.shim').hide();
+			});
+
+			// attach drag and move events
+			resize.bind('mousedown', function (e) {
+				e.preventDefault();
+				that._startResize.call(that, e);
+				frame.find('.shim').show();
+			});
+			// we need to listen do the entire document mouseup event
+			$(document).bind('mouseup.cms', function (e) {
+				that._stopResize.call(that);
+				frame.find('.shim').hide();
+			});
+
+			// now we need to do some nice animation ;)
+			this._animateModal();
+		},
+
+		_animateModal: function () {
+			var that = this;
+			var container = $('#cms_toolbar-modal');
+
+			container.css({
+				'display': 'block',
+				'left': this.event.pageX - $(window).scrollLeft() - 20,
+				'top': this.event.pageY - $(window).scrollTop() - 10,
+				'width': 30,
+				'height': 30
+			});
+
+			container.animate({
+				'left': '10%',
+				//'right': '10%',
+				'top': '10%',
+				'width': '80%',
+				'height': 300
+			}, function () {
+				that._updateIframeSize();
 			});
 		},
 
-		_destroyModal: function () {
+		_destroyModal: function (e) {
 			$('#cms_toolbar-modal').remove();
 		},
 
 		_startMove: function (initial) {
+			var that = this;
 			var container = $('#cms_toolbar-modal');
 			var position = container.position();
 			var initX = initial.pageX;
@@ -216,11 +275,47 @@ jQuery(document).ready(function ($) {
 					'left': position.left - (initX - e.pageX) - $(window).scrollLeft(),
 					'top': position.top - (initY - e.pageY) - $(window).scrollTop()
 				});
+
+				that._updateIframeSize();
 			});
 		},
 
 		_stopMove: function () {
 			$(document).unbind('mousemove.cms');
+		},
+
+		_startResize: function (initial) {
+			var that = this;
+			var container = $('#cms_toolbar-modal');
+			var initX = initial.pageX;
+			var initY = initial.pageY;
+			var width = container.width();
+			var height = container.height();
+
+			$(document).bind('mousemove.cms', function (e) {
+				container.css({
+					'width': width - (initX - e.pageX),
+					'height': height - (initY - e.pageY)
+				});
+
+				that._updateIframeSize();
+			});
+		},
+
+		_stopResize: function () {
+			$(document).unbind('mousemove.cms');
+		},
+
+		_updateIframeSize: function () {
+			var container = $('#cms_toolbar-modal');
+			var header = container.find('.cms_toolbar-modal-title');
+
+			var frame = container.find('.cms_toolbar-modal-iframe');
+
+			var cHeight = container.height();
+			var hHeight = header.outerHeight(true);
+
+			frame.css('height', cHeight - hHeight - 12);
 		},
 
 

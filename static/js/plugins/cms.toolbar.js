@@ -72,7 +72,7 @@ jQuery(document).ready(function ($) {
 
 		/**
 		 * Binds the collapsed data element to the toolbar
-		 * Calls private methods _showToolbar and _hideToolbar when required
+		 * Calls priva te methods _showToolbar and _hideToolbar when required
 		 * Saves current state in a cookie
 		 */
 		toggleToolbar: function () {
@@ -146,10 +146,6 @@ jQuery(document).ready(function ($) {
 
 			// attach menu events
 			this._menuEvents();
-
-			// autoadd sideframe
-			//this.loadSideframe('test/');
-
 		},
 
 		_menuEvents: function () {
