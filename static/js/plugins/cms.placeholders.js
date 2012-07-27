@@ -251,7 +251,7 @@ jQuery(document).ready(function ($) {
 			container.animate({
 				'left': '10%',
 				//'right': '10%',
-				'top': '10%',
+				'top': '15%',
 				'width': '80%',
 				'height': 300
 			}, function () {
