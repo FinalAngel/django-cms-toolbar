@@ -3,6 +3,775 @@
  * @author:		Angelo Dini
  * @copyright:	http://www.divio.ch under the BSD Licence
  */
+@font-face {
+  font-family: 'IconicFill';
+  src: url("/static/fonts/iconic-fill/iconic_fill.eot");
+  src: url("/static/fonts/iconic-fill/iconic_fill.eot?#iefix") format("embedded-opentype"), url("/static/fonts/iconic-fill/iconic_fill.ttf") format("truetype"), url("/static/fonts/iconic-fill/iconic_fill.svg#iconic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.iconic {
+  display: inline-block;
+  font-family: 'IconicFill';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.lightbulb:before {
+  content: '\e063';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.equalizer:before {
+  content: '\e052';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.brush_alt:before {
+  content: '\e01c';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.move:before {
+  content: '\e03e';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.tag_fill:before {
+  content: '\e02b';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.book_alt2:before {
+  content: '\e06a';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.layers:before {
+  content: '\e01f';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.chat_alt_fill:before {
+  content: '\e007';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.layers_alt:before {
+  content: '\e020';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.cloud_upload:before {
+  content: '\e045';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.chart_alt:before {
+  content: '\e029';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.fullscreen_exit_alt:before {
+  content: '\e051';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.cloud_download:before {
+  content: '\e044';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.paperclip:before {
+  content: '\e08a';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.heart_fill:before {
+  content: '\2764';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.mail:before {
+  content: '\2709';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.pen_alt_fill:before {
+  content: '\e005';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.check_alt:before {
+  content: '\2718';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.battery_charging:before {
+  content: '\e05d';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.lock_fill:before {
+  content: '\e075';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.stop:before {
+  content: '\e04a';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_up:before {
+  content: '\2191';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.move_horizontal:before {
+  content: '\e038';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.compass:before {
+  content: '\e021';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.minus_alt:before {
+  content: '\e009';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.battery_empty:before {
+  content: '\e05c';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.comment_fill:before {
+  content: '\e06d';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.map_pin_alt:before {
+  content: '\e002';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.question_mark:before {
+  content: '\003f';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.list:before {
+  content: '\e055';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.upload:before {
+  content: '\e043';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.reload:before {
+  content: '\e030';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.loop_alt4:before {
+  content: '\e035';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.loop_alt3:before {
+  content: '\e034';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.loop_alt2:before {
+  content: '\e033';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.loop_alt1:before {
+  content: '\e032';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.left_quote:before {
+  content: '\275d';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.x:before {
+  content: '\2713';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.last:before {
+  content: '\e04d';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.bars:before {
+  content: '\e06f';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_left:before {
+  content: '\2190';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_down:before {
+  content: '\2193';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.download:before {
+  content: '\e042';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.home:before {
+  content: '\2302';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.calendar:before {
+  content: '\e001';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.right_quote_alt:before {
+  content: '\e012';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.unlock_fill:before {
+  content: '\e076';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.fullscreen:before {
+  content: '\e04e';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.dial:before {
+  content: '\e058';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.plus_alt:before {
+  content: '\e008';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.clock:before {
+  content: '\e079';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.movie:before {
+  content: '\e060';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.steering_wheel:before {
+  content: '\e024';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.pen:before {
+  content: '\270e';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.pin:before {
+  content: '\e067';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.denied:before {
+  content: '\26d4';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.left_quote_alt:before {
+  content: '\e011';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.volume_mute:before {
+  content: '\e071';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.umbrella:before {
+  content: '\2602';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.list_nested:before {
+  content: '\e056';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_up_alt1:before {
+  content: '\e014';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.undo:before {
+  content: '\e02f';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.pause:before {
+  content: '\e049';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.bolt:before {
+  content: '\26a1';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.article:before {
+  content: '\e053';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.read_more:before {
+  content: '\e054';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.beaker:before {
+  content: '\e023';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.beaker_alt:before {
+  content: '\e010';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.battery_full:before {
+  content: '\e073';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_right:before {
+  content: '\2192';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.iphone:before {
+  content: '\e06e';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_up_alt2:before {
+  content: '\e018';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.cog:before {
+  content: '\2699';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.award_fill:before {
+  content: '\e022';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.first:before {
+  content: '\e04c';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.trash_fill:before {
+  content: '\e05a';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.image:before {
+  content: '\e027';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.comment_alt1_fill:before {
+  content: '\e003';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.cd:before {
+  content: '\e064';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.right_quote:before {
+  content: '\275e';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.brush:before {
+  content: '\e01b';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.cloud:before {
+  content: '\2601';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.eye:before {
+  content: '\e025';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.play_alt:before {
+  content: '\e048';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.transfer:before {
+  content: '\e041';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.pen_alt2:before {
+  content: '\e006';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.camera:before {
+  content: '\e070';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.move_horizontal_alt2:before {
+  content: '\e03a';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.curved_arrow:before {
+  content: '\2935';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.move_horizontal_alt1:before {
+  content: '\e039';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.aperture:before {
+  content: '\e026';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.reload_alt:before {
+  content: '\e031';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.magnifying_glass:before {
+  content: '\e074';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.calendar_alt_fill:before {
+  content: '\e06c';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.fork:before {
+  content: '\e046';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.box:before {
+  content: '\e06b';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.map_pin_fill:before {
+  content: '\e068';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.bars_alt:before {
+  content: '\e00a';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.volume:before {
+  content: '\e072';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.x_alt:before {
+  content: '\2714';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.link:before {
+  content: '\e077';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.move_vertical:before {
+  content: '\e03b';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.eyedropper:before {
+  content: '\e01e';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.spin:before {
+  content: '\e036';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.rss:before {
+  content: '\e02c';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.info:before {
+  content: '\2139';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.target:before {
+  content: '\e02a';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.cursor:before {
+  content: '\e057';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.key_fill:before {
+  content: '\26bf';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.minus:before {
+  content: '\2796';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.book_alt:before {
+  content: '\e00b';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.headphones:before {
+  content: '\e061';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.hash:before {
+  content: '\0023';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_left_alt1:before {
+  content: '\e013';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_left_alt2:before {
+  content: '\e017';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.fullscreen_exit:before {
+  content: '\e050';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.share:before {
+  content: '\e02e';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.fullscreen_alt:before {
+  content: '\e04f';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.comment_alt2_fill:before {
+  content: '\e004';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.moon_fill:before {
+  content: '\263e';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.at:before {
+  content: '\0040';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.chat:before {
+  content: '\e05e';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.move_vertical_alt2:before {
+  content: '\e03d';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.move_vertical_alt1:before {
+  content: '\e03c';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.check:before {
+  content: '\2717';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.mic:before {
+  content: '\e05f';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.book:before {
+  content: '\e069';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.move_alt1:before {
+  content: '\e03f';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.move_alt2:before {
+  content: '\e040';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.document_fill:before {
+  content: '\e066';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.plus:before {
+  content: '\2795';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.wrench:before {
+  content: '\e078';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.play:before {
+  content: '\e047';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.star:before {
+  content: '\2605';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.document_alt_fill:before {
+  content: '\e000';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.chart:before {
+  content: '\e028';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.rain:before {
+  content: '\26c6';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.folder_fill:before {
+  content: '\e065';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.new_window:before {
+  content: '\e059';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.user:before {
+  content: '\e062';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.battery_half:before {
+  content: '\e05b';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.aperture_alt:before {
+  content: '\e00c';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.eject:before {
+  content: '\e04b';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_down_alt1:before {
+  content: '\e016';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.pilcrow:before {
+  content: '\00b6';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_down_alt2:before {
+  content: '\e01a';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_right_alt1:before {
+  content: '\e015';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.arrow_right_alt2:before {
+  content: '\e019';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.rss_alt:before {
+  content: '\e02d';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.spin_alt:before {
+  content: '\e037';
+}
+
+/* line 1, ../../sass/partials/_iconic_fill.scss */
+.sun_fill:before {
+  content: '\2600';
+}
+
 /* line 1, ../../sass/partials/_content.scss */
 .header-main nav {
   float: none !important;
@@ -1878,7 +2647,7 @@ html, body {
   float: none;
   display: block;
   zoom: 1;
-  padding: 0px 25px 0px 15px;
+  padding: 2px 25px 2px 15px;
   white-space: nowrap;
 }
 /* line 65, ../../sass/plugins/cms.toolbar.scss */
@@ -1981,13 +2750,17 @@ html, body {
 }
 /* line 110, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_toolbar-item_switches {
-  margin: 1px 30px;
+  margin: 1px 20px 1px 15px;
 }
 /* line 112, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_toolbar-item_switches li {
   display: inline;
 }
-/* line 117, ../../sass/plugins/cms.toolbar.scss */
+/* line 114, ../../sass/plugins/cms.toolbar.scss */
+#cms_toolbar .cms_toolbar-item_switches li .live {
+  color: #6d9e04;
+}
+/* line 120, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_toolbar-item_switch a {
   -moz-box-shadow: #ebebeb 0px 1px 0px inset;
   -webkit-box-shadow: #ebebeb 0px 1px 0px inset;
@@ -2001,14 +2774,14 @@ html, body {
   border-radius: 5px;
   border-top: 1px solid #dadada;
   background: #f5f5f5 no-repeat center center;
-  margin: 8px 20px -1px 20px;
+  margin: 8px 15px -1px 15px;
   display: inline-block;
   text-indent: -1000em;
   height: 10px;
   width: 50px;
   position: relative;
 }
-/* line 128, ../../sass/plugins/cms.toolbar.scss */
+/* line 131, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_toolbar-item_switch a span {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
@@ -2031,18 +2804,33 @@ html, body {
   height: 14px;
   width: 14px;
 }
-/* line 138, ../../sass/plugins/cms.toolbar.scss */
+/* line 141, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_toolbar-item_switch.live a span {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bce18a), color-stop(50%, #b6d76f), color-stop(100%, #9ebf58));
+  background-image: -webkit-linear-gradient(top, #bce18a 0%, #b6d76f 50%, #9ebf58 100%);
+  background-image: -moz-linear-gradient(top, #bce18a 0%, #b6d76f 50%, #9ebf58 100%);
+  background-image: -o-linear-gradient(top, #bce18a 0%, #b6d76f 50%, #9ebf58 100%);
+  background-image: -ms-linear-gradient(top, #bce18a 0%, #b6d76f 50%, #9ebf58 100%);
+  background-image: linear-gradient(top, #bce18a 0%, #b6d76f 50%, #9ebf58 100%);
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #9ebf58;
+  height: 12px;
+  width: 12px;
   margin-left: 40px;
 }
-/* line 144, ../../sass/plugins/cms.toolbar.scss */
+/* line 153, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_toolbar-trigger {
   position: fixed;
   right: 0;
   top: 0;
   z-index: 9999999;
 }
-/* line 149, ../../sass/plugins/cms.toolbar.scss */
+/* line 158, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_toolbar-trigger ul {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
@@ -2050,24 +2838,40 @@ html, body {
   -ms-border-radius: 0;
   -khtml-border-radius: 0;
   border-radius: 0;
+  -moz-box-shadow: #dadada 1px 0px 2px inset;
+  -webkit-box-shadow: #dadada 1px 0px 2px inset;
+  -o-box-shadow: #dadada 1px 0px 2px inset;
+  box-shadow: #dadada 1px 0px 2px inset;
   border: 0;
-  background: #444;
+  background: #f5f5f5;
   margin: 0;
 }
-/* line 155, ../../sass/plugins/cms.toolbar.scss */
-#cms_toolbar .cms_toolbar-trigger ul li a, #cms_toolbar .cms_toolbar-trigger ul li a:hover {
-  color: #fff !important;
-}
-/* line 157, ../../sass/plugins/cms.toolbar.scss */
+/* line 166, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_toolbar-trigger ul li a span, #cms_toolbar .cms_toolbar-trigger ul li a:hover span {
 @inlcude border-radius(0);
   display: block;
   background: none;
   border: none;
-  color: #fff !important;
-  padding: 6px 10px 5px 10px;
+  color: #444 !important;
+  margin: 13px 10px 12px 10px;
 }
-/* line 171, ../../sass/plugins/cms.toolbar.scss */
+/* line 173, ../../sass/plugins/cms.toolbar.scss */
+#cms_toolbar .cms_toolbar-trigger ul li a span.arrow-up, #cms_toolbar .cms_toolbar-trigger ul li a:hover span.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #444;
+}
+/* line 180, ../../sass/plugins/cms.toolbar.scss */
+#cms_toolbar .cms_toolbar-trigger ul li a span.arrow-down, #cms_toolbar .cms_toolbar-trigger ul li a:hover span.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #444;
+}
+/* line 194, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_toolbar-icon_drag {
   text-indent: -119988px;
   overflow: hidden;
@@ -2077,7 +2881,7 @@ html, body {
 }
 
 /* #TOOLBAR/sideframe# */
-/* line 177, ../../sass/plugins/cms.toolbar.scss */
+/* line 200, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar #cms_sideframe {
   display: none;
   position: fixed;
@@ -2087,7 +2891,7 @@ html, body {
   z-index: 1;
   overflow: visible;
 }
-/* line 178, ../../sass/plugins/cms.toolbar.scss */
+/* line 201, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar #cms_sideframe iframe {
   height: 100%;
   width: 100%;
@@ -2095,7 +2899,7 @@ html, body {
   background: #fff;
   overflow: auto;
 }
-/* line 180, ../../sass/plugins/cms.toolbar.scss */
+/* line 203, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_sideframe-frame {
   position: relative;
   z-index: 10;
@@ -2105,7 +2909,7 @@ html, body {
   width: 275px;
   overflow: hidden;
 }
-/* line 182, ../../sass/plugins/cms.toolbar.scss */
+/* line 205, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_sideframe-resize {
   position: absolute;
   right: -2px;
@@ -2116,7 +2920,7 @@ html, body {
   cursor: col-resize;
   background: #efefef;
 }
-/* line 184, ../../sass/plugins/cms.toolbar.scss */
+/* line 207, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_sideframe-frame-overlay {
   position: absolute;
   left: 0;
@@ -2126,11 +2930,11 @@ html, body {
   height: 100%;
   background: transparent;
 }
-/* line 187, ../../sass/plugins/cms.toolbar.scss */
+/* line 210, ../../sass/plugins/cms.toolbar.scss */
 #cms_toolbar .cms_sideframe-knob {
   width: 6px;
   height: 50px;
-  background: #6482b0;
+  background: #444;
   position: absolute;
   right: -2px;
   top: 50%;

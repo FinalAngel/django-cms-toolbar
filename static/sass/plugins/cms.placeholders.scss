@@ -56,22 +56,24 @@
 .cms_placeholder { display:inline; }
 
 #cms_toolbar {
-	.cms_placeholders-tooltip { display:none; position:absolute; margin:0; padding:2px 12px;
-		color:#6482b0; font-size:11px; text-transform:uppercase; font-weight:bold;
-
-		background-color:#fcfcfc; /* Old browsers */
-		background:-moz-linear-gradient(top, #fcfcfc 0%, #fefefe 50%, #fcfcfc 100%); /* FF3.6+ */
-		background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(50%,#fefefe), color-stop(100%,#fcfcfc)); /* Chrome,Safari4+ */
-		background:-webkit-linear-gradient(top, #fcfcfc 0%,#fefefe 50%,#fcfcfc 100%); /* Chrome10+,Safari5.1+ */
-		background:-o-linear-gradient(top, #fcfcfc 0%,#fefefe 50%,#fcfcfc 100%); /* Opera 11.10+ */
-		background:-ms-linear-gradient(top, #fcfcfc 0%,#fefefe 50%,#fcfcfc 100%); /* IE10+ */
-		background:linear-gradient(to bottom, #fcfcfc 0%,#fefefe 50%,#fcfcfc 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
-		@include border-radius(3px);  @include box-shadow(0 0 2px #e1e1e1); }
+	.cms_placeholders-tooltip { 
+		@include text-shadow(#fff 0 0 3px);
+		display:none; 
+		position:absolute; 
+		margin:0; 
+		padding:2px 2px;
+		color:#444; 
+		font-size:11px; 
+		font-weight:bold; 
+		.iconic {
+			font-size: 15px;
+			margin-right: 10px;
+		}
+	}
 }
 
 #cms_toolbar-modal { position:fixed; left:0; top:0; z-index:999999; overflow:hidden;
-	@include border-radius(3px); @include box-shadow(0 0 5px #e1e1e1);
+	@include border-radius(5px); @include box-shadow(0 0 15px #bbb);
 	border:1px solid #e1e1e1; background:#fdfdfd; }
 #cms_toolbar-modal {
 	.cms_toolbar-modal-title { cursor:move; font-size:12px; text-transform:uppercase; color:#666; font-weight:bold;

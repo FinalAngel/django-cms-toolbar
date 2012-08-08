@@ -69,15 +69,15 @@ jQuery(document).ready(function ($) {
 			</ul>
 			{% endif %}
 			<ul class="cms_toolbar-item cms_toolbar-item_switches">
-				<li>Draft</li>
-				<li class="cms_toolbar-item_switch {% if request.args %}draft{% else %}live{% endif %}"><a href="{% if request.args %}/{% else %}?edit{% endif %}"><span>switch</span></a></li>
-				<li>Live</li>
+				<li><a href="/?edit=true">Draft</a></li>
+				<li class="cms_toolbar-item_switch {% if request.args %}draft{% else %}live{% endif %}"><a href="{% if request.args %}/{% else %}/?edit=true{% endif %}"><span>switch</span></a></li>
+				<li><a href="/" {% if not request.args %}class="live"{% endif %}>Live</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="cms_toolbar-trigger">
 		<ul class="cms_toolbar-item">
-			<li><a href="#"><span>X</span></a></li>
+			<li><a href="#"><span class="arrow-up"></span></a></li>
 		</ul>
 	</div>
 	<!-- end: toolbar -->
@@ -89,5 +89,5 @@ jQuery(document).ready(function ($) {
 		<div class="cms_sideframe-frame-overlay"></div>
 	</div>
 
-	<div class="cms_placeholders-tooltip">Edit</div>
+	<div class="cms_placeholders-tooltip"><span class="iconic pen_alt_fill"></span>Double-click to edit</div>
 </div>
