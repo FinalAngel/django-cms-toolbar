@@ -32,6 +32,7 @@ jQuery(document).ready(function ($) {
 						<li><a href="/admin/dashboard/" rel="sideframe"><span>Administration</span></a></li>
 						<li><a href="/admin/cms/page/" rel="sideframe"><span>Pages</span></a></li>
 						<li><a href="/admin/auth/user/" rel="sideframe"><span>Users</span></a></li>
+						<li><hr/></li>
 						<li><a href="/admin/logout/" rel="ajax"><span><strong>Logout</strong></span></a></li>
 					</ul>
 				</li>
@@ -60,11 +61,6 @@ jQuery(document).ready(function ($) {
 			</ul>
 		</div>
 		<div class="cms_toolbar-right">
-			<ul class="cms_toolbar-item cms_toolbar-item_buttons">
-				<li{% if not request.args %} class="active"{% endif %}><a href="/"><span>Live</span></a></li>
-				<li{% if request.args %} class="active"{% endif %}><a href="?edit=true"><span>Draft</span></a></li>
-			</ul>
-
 			{% if request.args %}
 			<ul class="cms_toolbar-item cms_toolbar-item_buttons">
 				<li{% if g.edit %} class="active"{% endif %}><a href="?edit=true"><span>Edit</span></a></li>
@@ -72,11 +68,16 @@ jQuery(document).ready(function ($) {
 				<li{% if g.view %} class="active"{% endif %}><a href="?view=true"><span>View</span></a></li>
 			</ul>
 			{% endif %}
+			<ul class="cms_toolbar-item cms_toolbar-item_switches">
+				<li><a href="/?edit=true">Draft</a></li>
+				<li class="cms_toolbar-item_switch {% if request.args %}draft{% else %}live{% endif %}"><a href="{% if request.args %}/{% else %}/?edit=true{% endif %}"><span>switch</span></a></li>
+				<li><a href="/" {% if not request.args %}class="live"{% endif %}>Live</a></li>
+			</ul>
 		</div>
 	</div>
 	<div class="cms_toolbar-trigger">
-		<ul class="cms_toolbar-item cms_toolbar-item_buttons">
-			<li><a href="#"><span>X</span></a></li>
+		<ul class="cms_toolbar-item">
+			<li><a href="#"><span class="arrow-up"></span></a></li>
 		</ul>
 	</div>
 	<!-- end: toolbar -->
@@ -88,5 +89,5 @@ jQuery(document).ready(function ($) {
 		<div class="cms_sideframe-frame-overlay"></div>
 	</div>
 
-	<div class="cms_placeholders-tooltip">Edit</div>
+	<div class="cms_placeholders-tooltip"><span class="iconic pen_alt_fill"></span>Double-click to edit</div>
 </div>

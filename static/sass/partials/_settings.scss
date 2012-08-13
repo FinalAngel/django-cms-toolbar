@@ -13,8 +13,11 @@
 @import "compass/css3";
 @import "compass/utilities";
 @import "compass/typography/text/ellipsis";
+// importing fonts
+@import "partials/iconic_fill";
 // importing project partials
 @import "partials/content";
+
 
 //##################################################
 // #GLOBAL VARIABLES#

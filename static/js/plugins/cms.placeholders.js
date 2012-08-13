@@ -136,8 +136,8 @@ jQuery(document).ready(function ($) {
 
 			// prepare fake html
 			var html = '<div id="cms_toolbar-modal" class="cms_toolbar-modal">' +
-					   '    <div class="cms_toolbar-modal-close">X</div>' +
-					   '    <div class="cms_toolbar-modal-collapse">minimize <span>–</span></div>' +
+					   '    <div class="cms_toolbar-modal-close"><span class="iconic x"></span></div>' +
+					   '    <div class="cms_toolbar-modal-collapse"><span>–</span></div>' +
 					   '    <div class="cms_toolbar-modal-title"></div>' +
 					   '    <div class="cms_toolbar-modal-resize"></div>' +
 					   '    <div class="cms_toolbar-modal-iframe"><div class="shim"></div></div>' +
@@ -191,12 +191,12 @@ jQuery(document).ready(function ($) {
 				if(minimize.data('collapsed')) {
 					frame.show();
 					container.css('width', '80%');
-					minimize.html('minimize <span>–</span>');
+					minimize.html('<span class="iconic minus"></span>');
 					minimize.data('collapsed', false)
 				} else {
 					frame.hide();
 					container.css('width', 300).css('height', 'auto');
-					minimize.html('maximize <span>+</span>');
+					minimize.html('<span class="iconic plus"></span>');
 					minimize.data('collapsed', true)
 				}
 			});

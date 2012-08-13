@@ -5,9 +5,10 @@
 <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
 <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css" />
 <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
-<link rel="stylesheet" type="text/css" href="/static/admin/css/divio.css" />
+<!-- <link rel="stylesheet" type="text/css" href="/static/admin/css/divio.css" />-->
 <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
 <link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/djeese.css" />
 <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/static/admin/css/ie.css" /><![endif]-->
 <script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
 <meta name="robots" content="NONE,NOARCHIVE" />
@@ -16,15 +17,14 @@
 
 <!-- cms controls -->
 <div id="cms_sideframe-controls" class="cms_reset">
-	<div class="cms_sideframe-header">Settings</div>
-	<a href="#" class="cms_sideframe-close">close sidebar</a>
+	<!-- <a href="#" class="cms_sideframe-close">close sidebar</a>-->
 </div>
 
 <!-- Container -->
 <div id="container">
 	<!-- Content -->
 	<div id="content">
-		<h1>{% block title %}{% endblock title %}</h1>
+		<h3>{% block title %}{% endblock title %}</h3>
 		<div id="content-main">{% block content %}{% endblock content %}</div>
 		<br class="clear" />
 	</div>
