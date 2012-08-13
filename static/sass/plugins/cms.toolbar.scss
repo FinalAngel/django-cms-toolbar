@@ -96,9 +96,8 @@
 		li:first-child a span { @include border-radius(3px 0 0 3px); }
 		li:last-child a span { @include border-radius(0 3px 3px 0); }
 		.active a span {
-			@include background-image(linear-gradient(top, #666 0%, #444 50%, #222 100%));
-			background: #444;
-			border-right:1px solid #444;
+			@include background-image(linear-gradient(top, #666, #444));
+			border: 1px solid #444;	
 			color: #fff !important;
 		}
 	}
