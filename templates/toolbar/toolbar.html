@@ -5,14 +5,21 @@
 <script type="text/javascript" src="/static/js/libs/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/libs/class.min.js"></script>
 <script type="text/javascript" src="/static/js/plugins/cms.toolbar.js"></script>
+{% if g.edit %}
 <script type="text/javascript" src="/static/js/plugins/cms.placeholders.js"></script>
+{% endif %}
+{% if g.layout %}
+<script type="text/javascript" src="/static/js/plugins/cms.layout.js"></script>
+<script type="text/javascript" src="/static/js/plugins/jquery.dragndrop.js"></script>
+{% endif %}
 
 <link rel="stylesheet" type="text/css" href="/static/css/plugins/cms.toolbar.css" />
 <link rel="stylesheet" type="text/css" href="/static/css/plugins/cms.placeholders.css" />
 <script type="text/javascript">
 jQuery(document).ready(function ($) {
 	new CMS.Toolbar('#cms_toolbar');
-	new CMS.Placeholders();
+	{% if g.edit %}new CMS.Placeholders();{% endif %} // should each be initialized individually
+	{% if g.layout %}new CMS.Layout();{% endif %} // should each be initialized individually
 });
 </script>
 <script type="text/javascript">

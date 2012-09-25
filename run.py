@@ -11,7 +11,7 @@ def render_placeholder(placeholder_type=None):
     if placeholder_type == 'start':
         index = g.index
         g.index += 1
-        return Markup('<div id="cms_placeholder-%s" class="cms_placeholder">' % index)
+        return Markup('<div id="cms_placeholder-%s" class="cms_placeholder" data-title="Drag Element">' % index)
     else:
         return Markup('</div>')
 
