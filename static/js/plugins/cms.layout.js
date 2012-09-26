@@ -25,17 +25,18 @@ jQuery(document).ready(function ($) {
 			this.placeholders = $('.cms_placeholder');
 
 			// we need to inject each element to the dom and style it somehow (where do we get the name?)
-			this._injectDragElement();
-		},
+			//this._injectDragElement();
 
-		_injectDragElement: function () {
-			var tpl = '<div class="cms_dragitem">{title}</div>';
 
-			// we need to determin which placeholder is held in which
-			this.placeholders.each(function (index, item) {
-				$(this).after(tpl.replace('{title}', $(item).data('title') + ' ' + index));
+
+			var dragitems = $('.cms_dragholder');
+
+			dragitems.bind('draginit', function (e, drag) {
+				drag.limit($(this).parent());
+
+				drag.ghost();
+				drag.horizontal();
 			});
-
 		}
 
 	});

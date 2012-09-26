@@ -1,13 +1,62 @@
+<style>
+/* quick prototyping */
+.cms_dragholder { color:#888; font:normal 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	border-radius:3px; padding:6px 8px 5px; margin:3px 0; cursor:move;
+	border:1px solid #dadada; background:#f5f5f5; }
+.cms_dragholder strong { color:#000; }
+
+
+
+.cms_dragholder .cms_dragholder { background:#fbfbfb !important; }
+.cms_dragholder .cms_dragholder .cms_dragholder { background:#fff !important; }
+
+.cms_dragholder-empty { border:1px dotted #c9c9c9; background:transparent; }
+
+
+.cms_dragitem {}
+
+.cms_dragitem-collapsable { cursor:pointer; padding-left:15px;
+	background:url('/static/img/toolbar/arrow-down-active.png') no-repeat 3px 4px; }
+
+.cms_dragholder:hover { color:#6482b0; border-color:#bbcade !important; background:#f2f4f9; }
+
+
+</style>
+
 <!-- content -->
 <div class="container_12">
 	<!-- placeholder bar -->
 	{{ render_placeholder_bar('Feature') }}
+	<div class="cms_dragholder cms_dragholder-empty"><div class="cms_dragitem">No plugin added yet</div></div>
 </div>
 
 <section class="container_12">
 	<div class="content">
 		<!-- placeholder bar -->
 		{{ render_placeholder_bar('Content') }}
+		<div class="cms_dragholder">
+			<div class="cms_dragitem cms_dragitem-collapsable"><strong>Layout</strong></div>
+
+			<div class="cms_dragholder">
+				<div class="cms_dragitem"><strong>Picture</strong> Flying Pony</div>
+			</div>
+			<div class="cms_dragholder">
+				<div class="cms_dragitem"><strong>Text</strong> this is an introduc...</div>
+			</div>
+			<div class="cms_dragholder">
+				<div class="cms_dragitem cms_dragitem-collapsable"><strong>Layout</strong></div>
+
+				<div class="cms_dragholder">
+					<div class="cms_dragitem"><strong>Text</strong> welcome to our....</div>
+				</div>
+				<div class="cms_dragholder">
+					<div class="cms_dragitem"><strong>Picture</strong> List Item</div>
+				</div>
+				<div class="cms_dragholder">
+					<div class="cms_dragitem"><strong>Text</strong> The picture shows...</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="clearfix"></div>
 </section>
