@@ -1,24 +1,35 @@
 <style>
 /* quick prototyping */
-.cms_dragholder { color:#888; font:normal 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
-	border-radius:3px; padding:6px 8px 5px; margin:3px 0; cursor:move;
+.cms_dragholder { position:relative; left:0; top:0; z-index:99;
+	color:#888; font:normal 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	border-radius:3px; padding:6px 8px 5px; margin:3px 0;
 	border:1px solid #dadada; background:#f5f5f5; }
 .cms_dragholder strong { color:#000; }
 
-
-
-.cms_dragholder .cms_dragholder { background:#fbfbfb !important; }
-.cms_dragholder .cms_dragholder .cms_dragholder { background:#fff !important; }
-
+/* different states */
 .cms_dragholder-empty { border:1px dotted #c9c9c9; background:transparent; }
+.cms_dragholder-draggable { cursor:move; z-index:100; }
+
+.cms_dragholder-allowed { color:#363 !important; border:1px solid #cea !important; }
+.cms_dragholder-disallowed { color:#c00 !important; border:1px solid #faa !important; }
+
+.cms_dragholder-hover-allowed { color:#363 !important; border:1px solid #cea !important; background:#efc !important; }
+.cms_dragholder-hover-disallowed { color:#c00 !important; border:1px solid #faa !important; background:#fdd !important; }
+
+
+.cms_dragholder .cms_dragholder { background:#fbfbfb; }
+.cms_dragholder .cms_dragholder .cms_dragholder { background:#fff; }
+
+.cms_dragholder-placeholder { color:#363 !important; border:1px solid #cea !important; background:#efc !important; }
 
 
 .cms_dragitem {}
 
 .cms_dragitem-collapsable { cursor:pointer; padding-left:15px;
 	background:url('/static/img/toolbar/arrow-down-active.png') no-repeat 3px 4px; }
+.cms_dragitem-collapsed { background:url('/static/img/toolbar/arrow-down-collapsed.png') no-repeat 3px 3px; }
 
-.cms_dragholder:hover { color:#6482b0; border-color:#bbcade !important; background:#f2f4f9; }
+/*.cms_dragholder-draggable:hover { color:#6482b0; border-color:#bbcade; background:#f2f4f9; }*/
 
 
 </style>
@@ -27,36 +38,37 @@
 <div class="container_12">
 	<!-- placeholder bar -->
 	{{ render_placeholder_bar('Feature') }}
-	<div class="cms_dragholder cms_dragholder-empty"><div class="cms_dragitem">No plugin added yet</div></div>
+	<div class="cms_dragholder cms_dragholder-empty cms_dragholder-droppable"><div class="cms_dragitem">Drop a plugin here</div></div>
 </div>
 
 <section class="container_12">
 	<div class="content">
 		<!-- placeholder bar -->
 		{{ render_placeholder_bar('Content') }}
-		<div class="cms_dragholder">
+		<div class="cms_dragholder cms_dragholder-draggable cms_dragholder-droppable">
 			<div class="cms_dragitem cms_dragitem-collapsable"><strong>Layout</strong></div>
 
-			<div class="cms_dragholder">
+			<div class="cms_dragholder cms_dragholder-draggable">
 				<div class="cms_dragitem"><strong>Picture</strong> Flying Pony</div>
 			</div>
-			<div class="cms_dragholder">
+			<div class="cms_dragholder cms_dragholder-draggable">
 				<div class="cms_dragitem"><strong>Text</strong> this is an introduc...</div>
 			</div>
-			<div class="cms_dragholder">
+			<div class="cms_dragholder cms_dragholder-draggable cms_dragholder-droppable">
 				<div class="cms_dragitem cms_dragitem-collapsable"><strong>Layout</strong></div>
 
-				<div class="cms_dragholder">
+				<div class="cms_dragholder cms_dragholder-draggable">
 					<div class="cms_dragitem"><strong>Text</strong> welcome to our....</div>
 				</div>
-				<div class="cms_dragholder">
+				<div class="cms_dragholder cms_dragholder-draggable">
 					<div class="cms_dragitem"><strong>Picture</strong> List Item</div>
 				</div>
-				<div class="cms_dragholder">
+				<div class="cms_dragholder cms_dragholder-draggable">
 					<div class="cms_dragitem"><strong>Text</strong> The picture shows...</div>
 				</div>
 			</div>
 		</div>
+		<div class="cms_dragholder cms_dragholder-empty cms_dragholder-droppable"><div class="cms_dragitem">Drop a plugin here</div></div>
 	</div>
 	<div class="clearfix"></div>
 </section>
@@ -67,13 +79,27 @@
 	<div class="grid_4">
 		<!-- placeholder bar -->
 		{{ render_placeholder_bar('Left column') }}
+		<div class="cms_dragholder cms_dragholder-allowed">
+			<div class="cms_dragitem"><strong>Allowed</strong> Example...</div>
+		</div>
+		<div class="cms_dragholder cms_dragholder-hover-allowed">
+			<div class="cms_dragitem"><strong>Allowed</strong> Example...</div>
+		</div>
+		<div class="cms_dragholder cms_dragholder-disallowed">
+			<div class="cms_dragitem"><strong>Disallowed</strong> Example...</div>
+		</div>
+		<div class="cms_dragholder cms_dragholder-hover-disallowed">
+			<div class="cms_dragitem"><strong>Disallowed</strong> Example...</div>
+		</div>
 	</div>
 	<div class="grid_4">
 		<!-- placeholder bar -->
 		{{ render_placeholder_bar('Middle column') }}
+		<div class="cms_dragholder cms_dragholder-empty cms_dragholder-droppable"><div class="cms_dragitem">Drop a plugin here</div></div>
 	</div>
 	<div class="grid_4">
 		<!-- placeholder bar -->
 		{{ render_placeholder_bar('Right column') }}
+		<div class="cms_dragholder cms_dragholder-empty cms_dragholder-droppable"><div class="cms_dragitem">Drop a plugin here</div></div>
 	</div>
 </div>

@@ -16,7 +16,7 @@
 		@include border-radius(3px); 
 		position:relative; 
 		left:0; top:0; 
-		z-index:99999;
+		z-index:100;
 		border-top: 1px solid #dadada;
 		background:#f5f5f5 no-repeat center center;
  }
@@ -39,7 +39,7 @@
 			color:#fff; 
 		}
 
-		ul { display:none; position:absolute; right:-1px; top:25px; z-index:10; min-width:150px;
+		ul { display:none; position:absolute; right:0; top:25px; z-index:1000; min-width:150px;
 			@include border-radius(0 0 3px 3px); @include box-shadow(0 2px 2px #e1e1e1);
 			border:1px solid #dfdfdf; background:#fff; }
 		ul li { zoom:1; border-top:1px dotted #e1e1e1; }
@@ -172,10 +172,3 @@
 	filter:alpha(opacity=50);
 	opacity:0.5;
 }
-
-/* #PLACEHOLDERS/IE7# */
-*+html .cms_placeholder-subnav { width:200px; }
-
-/* #PLACEHOLDERS/IE6# */
-*html .cms_placeholder-subnav { width:200px; }
-*html .cms_placeholder-icon { background-image: url('../../images/toolbar/sprite_toolbar-ie.png') !important; }

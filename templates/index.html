@@ -9,15 +9,28 @@
 	<meta name="keywords" content="" />
 	<!-- stylesheets -->
 	<link rel="stylesheet" href="/static/css/base.css" />
+	<link rel="stylesheet" href="/static/css/plugins/cms.toolbar.css" />
+	<link rel="stylesheet" href="/static/css/plugins/cms.placeholders.css" />
 	{% if not request.args.get('edit') %}<style>.cms_placeholder * { display:none; }</style>{% endif %}
 </head>
 <body class="no-js tpl_master en anonymus">
 
 {% if not request.args.get('logout') %}{% include 'toolbar/toolbar.html' %}{% endif %}
 {% include 'content.html' %}
-
 <!-- include javascript -->
 <script src="/static/js/libs/jquery.min.js"></script>
-<script src="/static/js/base.js"></script>
+<script src="/static/js/libs/class.min.js"></script>
+<script src="/static/js/plugins/jquery.ui.custom.js"></script>
+<script src="/static/js/plugins/cms.toolbar.js"></script>
+{% if g.edit %}<script src="/static/js/plugins/cms.placeholders.js"></script>{% endif %}
+{% if g.layout %}<script src="/static/js/plugins/cms.layout.js"></script>{% endif %}
+
+<script type="text/javascript">
+jQuery(document).ready(function ($) {
+	new CMS.Toolbar('#cms_toolbar');
+	{% if g.edit %}new CMS.Placeholders();{% endif %} // should each be initialized individually
+	{% if g.layout %}new CMS.Layout();{% endif %} // should each be initialized individually
+});
+</script>
 </body>
 </html>
